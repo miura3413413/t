@@ -4,18 +4,26 @@ import Rightbar from '../components/rightbar/Rightbar'
 import Sidebar from '../components/sidebar/Sidebar'
 import Timeline from '../components/timeline/Timeline'
 
+
+import { styled } from '@mui/material/styles';
+
 const Home: NextPage = () => {
+const StyledMain = styled("main")({
+  display: "flex"
+})
+
+
   return (
     <div>
       <Head>
         <title>Twitter clone</title>
       </Head>
 
-      <main>
-      <Sidebar />
-      <Timeline />
-      <Rightbar />
-      </main>
+      <StyledMain>
+        <Sidebar />
+        <Timeline />
+        <Rightbar />
+      </StyledMain>
     </div>
   )
 }
