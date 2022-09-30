@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 
 
-import { styled } from '@mui/material/styles';
+import styled from '@emotion/styled'
 import TweetSpace from "./TweetSpace";
 import Tweet from "../Tweet";
 

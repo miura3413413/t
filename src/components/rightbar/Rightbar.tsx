@@ -1,10 +1,14 @@
 import { NextPage } from "next"
 
-import { styled } from '@mui/material/styles';
+
+import styled from '@emotion/styled'
 
 const StyledDiv = styled("div")({
   width: "30%",
   height: "100%",
+  "@media (max-width: 1000px)": {
+    display: "none"
+  },
 //  backgroundColor: "cyan"
 })
  

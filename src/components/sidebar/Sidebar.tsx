@@ -10,18 +10,30 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 
 import { SidebarIcon } from './SidebarIcon';
-import { styled } from '@mui/material/styles';
+
+import styled from '@emotion/styled'
 import Image from "next/image";
 
 const StyledDiv = styled("div")({
-  width: "30%",
+  width: "25%",
   height: "100%",
+//  backgroundColor: "gray",
+})
+
+const StyledItem = styled("div")({
+  width: "fit-content",
+  paddingTop: "10px",
+  margin: "20px auto 0 auto",
+  "@media (max-width: 1200px)": {
+    margin: "20px auto 10px auto"
+  },
 })
 
 const Sidebar: NextPage = () => {
   return (
     <StyledDiv >
-      <Image  src="/2021 Twitter logo - blue.png"  width="28" height="28" objectFit="cover"/>
+      <StyledItem>
+        <Image  src="/2021 Twitter logo - blue.png"  width="25" height="25" objectFit="cover"/>
       <SidebarIcon Icon={HomeIcon} title="ホーム"/>
       <SidebarIcon Icon={SearchIcon} title="話題を検索"/>
       <SidebarIcon Icon={NotificationsNoneIcon} title="通知"/>
@@ -30,6 +42,7 @@ const Sidebar: NextPage = () => {
       <SidebarIcon Icon={ListAltIcon} title="リスト"/>
       <SidebarIcon Icon={PermIdentityIcon} title="プロフィール"/>
       <SidebarIcon Icon={MoreHorizIcon} title="もっと見る"/>
+      </StyledItem>
      </StyledDiv>
   )
 
