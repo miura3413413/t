@@ -10,6 +10,7 @@ import { IconText } from "./IconText";
 
 const StyledDiv = styled.div`
   width: 100%;
+  height: 100%;
   border: solid;
   border-width: thin;
   border-color: #daeeee;
@@ -27,25 +28,28 @@ const StyledDivTop = styled.div`
   
 `
 
-const StyledSpanName = styled.p`
+const StyledSpanName = styled.span`
   border: solid;
   border-width: thin;
   border-color: #daeeee;
   margin: 0;
+  font-weight: bold;
 `
 
-const StyledSpanTime = styled.p`
+const StyledSpanTime = styled.span`
   border: solid;
   border-width: thin;
   border-color: #daeeee;
-  margin: 0;
+  margin: 0 0 0 5px;
 `
 
-const StyledSpanTweet = styled.p`
+const StyledSpanTweet = styled.span`
+  width: 40%;
   border: solid;
   border-width: thin;
   border-color: #daeeee;
   margin: 0;
+  overflow-wrap: break-word;
 `
 
 const Tweet : NextPage = () => {
@@ -58,7 +62,7 @@ const Tweet : NextPage = () => {
         <StyledSpanTime>時間</StyledSpanTime>
         <MoreHorizIcon sx={{margin: "auto 20px auto auto"}}/>
       </StyledDivTop>
-      <StyledSpanTweet>あqqqqqqqqqqqqqqqqqqqqq</StyledSpanTweet>
+      <StyledSpanTweet>aaaaaaaaaassaあaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</StyledSpanTweet>
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
         <IconText Icon={ChatBubbleOutlineIcon} text={100}/>
         <IconText Icon={AutorenewIcon} text={100}/>

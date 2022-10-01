@@ -23,6 +23,7 @@ const StyledDiv = styled.div`
 const StyledP = styled.p<PProps>`
   width: 100%;
   margin: 20px;
+  font-weight: bold;
   @media (max-width: 1200px) {
     display: ${props => props.display}; 
   };
