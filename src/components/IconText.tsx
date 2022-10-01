@@ -3,9 +3,14 @@ import { SvgIconTypeMap,  } from "@mui/material"
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 import styled from '@emotion/styled'
+
 interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
   text: string | number
+  display?: string
+}
+interface PProps {
+  display?: string
 }
 
 const StyledDiv = styled.div`
@@ -13,24 +18,23 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   margin: 20px 50px 0 0;
-  
 `
 
-const StyledP = styled.p`
+const StyledP = styled.p<PProps>`
   width: 100%;
   margin: 20px;
   @media (max-width: 1200px) {
-    display: none; 
+    display: ${props => props.display}; 
   };
 `
   
 
 
-export const IconText = ({Icon, text}: Props) => {
+export const IconText = ({Icon, text, display}: Props) => {
   return(
     <StyledDiv>
       <Icon /> 
-      <StyledP >{text}</StyledP>
+      <StyledP display={display}>{text}</StyledP>
     </StyledDiv> 
 
   )

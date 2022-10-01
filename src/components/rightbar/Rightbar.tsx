@@ -9,7 +9,8 @@ const StyledDiv = styled.div`
   position: sticky;
   top: 0;
   @media(max-width: 1000px) {
-    display: none;
+    visibility: hidden;
+    width: 5%;
   };
 `
  

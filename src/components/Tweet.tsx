@@ -56,16 +56,13 @@ const Tweet : NextPage = () => {
       <StyledDivTop >
         <StyledSpanName>名前</StyledSpanName>
         <StyledSpanTime>時間</StyledSpanTime>
-        <MoreHorizIcon sx={{margin: "auto 15px auto auto"}}/>
+        <MoreHorizIcon sx={{margin: "auto 20px auto auto"}}/>
       </StyledDivTop>
       <StyledSpanTweet>あqqqqqqqqqqqqqqqqqqqqq</StyledSpanTweet>
-      <div style ={{display : "flex", alignItems: "center"}}>
-        {/* <ChatBubbleOutlineIcon /> */}
+      <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
         <IconText Icon={ChatBubbleOutlineIcon} text={100}/>
         <IconText Icon={AutorenewIcon} text={100}/>
         <IconText Icon={FavoriteBorderIcon} text={100}/>
-        {/* <AutorenewIcon />
-        <FavoriteBorderIcon /> */}
       </div>
     </StyledDivRight>
     </StyledDiv>

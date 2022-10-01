@@ -15,7 +15,7 @@ const StyledDiv = styled.div`
     width: 55%;
   };
   @media(max-width: 720px) {
-    width: 90%;
+    width: 80%;
   };
 `
 
