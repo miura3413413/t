@@ -8,9 +8,11 @@ interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
   text: string | number
   display?: string
+  weight: string
 }
 interface PProps {
   display?: string
+  weight: string
 }
 
 const StyledDiv = styled.div`
@@ -18,12 +20,13 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   margin: 20px 50px 0 0;
+  
 `
 
 const StyledP = styled.p<PProps>`
   width: 100%;
   margin: 20px;
-  font-weight: bold;
+  font-weight: ${props => props.weight};
   @media (max-width: 1200px) {
     display: ${props => props.display}; 
   };
@@ -31,11 +34,11 @@ const StyledP = styled.p<PProps>`
   
 
 
-export const IconText = ({Icon, text, display}: Props) => {
+export const IconText = ({Icon, text, display, weight}: Props) => {
   return(
     <StyledDiv>
       <Icon /> 
-      <StyledP display={display}>{text}</StyledP>
+      <StyledP  weight={weight} display={display}>{text}</StyledP>
     </StyledDiv> 
 
   )

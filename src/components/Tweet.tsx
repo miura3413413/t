@@ -29,26 +29,17 @@ const StyledDivTop = styled.div`
 `
 
 const StyledSpanName = styled.span`
-  border: solid;
-  border-width: thin;
-  border-color: #daeeee;
   margin: 0;
   font-weight: bold;
 `
 
 const StyledSpanTime = styled.span`
-  border: solid;
-  border-width: thin;
-  border-color: #daeeee;
   margin: 0 0 0 5px;
 `
 
 const StyledSpanTweet = styled.span`
-  width: 40%;
-  border: solid;
-  border-width: thin;
-  border-color: #daeeee;
-  margin: 0;
+  margin-right: 20px;
+  
   overflow-wrap: break-word;
 `
 
@@ -60,13 +51,13 @@ const Tweet : NextPage = () => {
       <StyledDivTop >
         <StyledSpanName>名前</StyledSpanName>
         <StyledSpanTime>時間</StyledSpanTime>
-        <MoreHorizIcon sx={{margin: "auto 20px auto auto"}}/>
+        <MoreHorizIcon sx={{margin: "auto 5px auto auto"}}/>
       </StyledDivTop>
       <StyledSpanTweet>aaaaaaaaaassaあaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</StyledSpanTweet>
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
-        <IconText Icon={ChatBubbleOutlineIcon} text={100}/>
-        <IconText Icon={AutorenewIcon} text={100}/>
-        <IconText Icon={FavoriteBorderIcon} text={100}/>
+        <IconText Icon={ChatBubbleOutlineIcon} text={100} weight="lighter"/>
+        <IconText Icon={AutorenewIcon} text={100} weight="lighter"/>
+        <IconText Icon={FavoriteBorderIcon} text={100} weight="lighter"/>
       </div>
     </StyledDivRight>
     </StyledDiv>
