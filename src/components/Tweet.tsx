@@ -6,6 +6,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { IconText } from "./IconText";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -21,8 +22,9 @@ const StyledDivRight = styled.div`
 `
 
 const StyledDivTop = styled.div`
-  margin-top: 15px;
+  margin: 15px 0px 0 0;
   display: flex;
+  
 `
 
 const StyledSpanName = styled.p`
@@ -54,13 +56,16 @@ const Tweet : NextPage = () => {
       <StyledDivTop >
         <StyledSpanName>名前</StyledSpanName>
         <StyledSpanTime>時間</StyledSpanTime>
-        <MoreHorizIcon />
+        <MoreHorizIcon sx={{margin: "auto 15px auto auto"}}/>
       </StyledDivTop>
       <StyledSpanTweet>あqqqqqqqqqqqqqqqqqqqqq</StyledSpanTweet>
-      <div>
-        <ChatBubbleOutlineIcon />
-        <AutorenewIcon />
-        <FavoriteBorderIcon />
+      <div style ={{display : "flex", alignItems: "center"}}>
+        {/* <ChatBubbleOutlineIcon /> */}
+        <IconText Icon={ChatBubbleOutlineIcon} text={100}/>
+        <IconText Icon={AutorenewIcon} text={100}/>
+        <IconText Icon={FavoriteBorderIcon} text={100}/>
+        {/* <AutorenewIcon />
+        <FavoriteBorderIcon /> */}
       </div>
     </StyledDivRight>
     </StyledDiv>

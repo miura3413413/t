@@ -4,7 +4,7 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 import styled from '@emotion/styled'
 interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
-  title: string
+  text: string | number
 }
 
 const StyledDiv = styled.div`
@@ -25,11 +25,11 @@ const StyledP = styled.p`
   
 
 
-export const SidebarIcon = ({Icon, title}: Props) => {
+export const IconText = ({Icon, text}: Props) => {
   return(
     <StyledDiv>
       <Icon /> 
-      <StyledP>{title}</StyledP>
+      <StyledP>{text}</StyledP>
     </StyledDiv> 
 
   )

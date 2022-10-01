@@ -9,7 +9,7 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 
-import { SidebarIcon } from './SidebarIcon';
+import { IconText } from '../IconText';
 
 import styled from '@emotion/styled'
 import Image from "next/image";
@@ -39,14 +39,14 @@ const Sidebar: NextPage = () => {
     <StyledDiv >
       <StyledItem>
         <Image  src="/2021 Twitter logo - blue.png"  width="25" height="25" objectFit="cover"/>
-      <SidebarIcon Icon={HomeIcon} title="ホーム"/>
-      <SidebarIcon Icon={SearchIcon} title="話題を検索"/>
-      <SidebarIcon Icon={NotificationsNoneIcon} title="通知"/>
-      <SidebarIcon Icon={MailOutlineIcon} title="メッセージ"/>
-      <SidebarIcon Icon={BookmarkBorderIcon} title="ブックマーク"/>
-      <SidebarIcon Icon={ListAltIcon} title="リスト"/>
-      <SidebarIcon Icon={PermIdentityIcon} title="プロフィール"/>
-      <SidebarIcon Icon={MoreHorizIcon} title="もっと見る"/>
+      <IconText Icon={HomeIcon} text="ホーム"/>
+      <IconText Icon={SearchIcon} text="話題を検索"/>
+      <IconText Icon={NotificationsNoneIcon} text="通知"/>
+      <IconText Icon={MailOutlineIcon} text="メッセージ"/>
+      <IconText Icon={BookmarkBorderIcon} text="ブックマーク"/>
+      <IconText Icon={ListAltIcon} text="リスト"/>
+      <IconText Icon={PermIdentityIcon} text="プロフィール"/>
+      <IconText Icon={MoreHorizIcon} text="もっと見る"/>
       </StyledItem>
      </StyledDiv>
   )
