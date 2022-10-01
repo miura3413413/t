@@ -7,21 +7,21 @@ interface Props {
   title: string
 }
 
-const StyledDiv = styled("div")({
-  width: "100%",
-  display: "flex",
-  alignItems: "center",
-  margin: "20px 50px 0 0",
+const StyledDiv = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 20px 50px 0 0;
   
-})
+`
 
-const StyledP = styled("p")({
-  width:" 100%",
-  margin: "20px",
-  "@media (max-width: 1200px)": {
-    display: "none",
-  },
-})
+const StyledP = styled.p`
+  width: 100%;
+  margin: 20px;
+  @media (max-width: 1200px) {
+    display: none;
+  };
+`
   
 
 

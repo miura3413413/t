@@ -7,46 +7,44 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
-const StyledDiv = styled("div")({
-  width: "100%",
-  border: "solid",
-  borderWidth: "thin",
-  borderColor: "#daeeee",
-  display: "flex",
-  
-})
+const StyledDiv = styled.div`
+  width: 100%;
+  border: solid;
+  border-width: thin;
+  border-color: #daeeee;
+  display: flex;
+`
 
-const StyledDivRight = styled("div")({
-  width: "80%",
-  margin: "0",
-})
+const StyledDivRight = styled.div`
+  width: 80%;
+  margin: 0;
+`
 
-const StyledDivTop = styled("div")({
-  marginTop: "15px",
-  display: "flex",
-  ":last-child":{marginLeft: "auto",}
-})
+const StyledDivTop = styled.div`
+  margin-top: 15px;
+  display: flex;
+`
 
-const StyledSpanName = styled("p")({
-  border: "solid",
-  borderWidth: "thin",
-  borderColor: "#daeeee",
-  margin: "0 "
-})
+const StyledSpanName = styled.p`
+  border: solid;
+  border-width: thin;
+  border-color: #daeeee;
+  margin: 0;
+`
 
-const StyledSpanTime = styled("p")({
-  border: "solid",
-  borderWidth: "thin",
-  borderColor: "#daeeee",
-  margin: "0 "
-})
+const StyledSpanTime = styled.p`
+  border: solid;
+  border-width: thin;
+  border-color: #daeeee;
+  margin: 0;
+`
 
-const StyledSpanTweet = styled("p")({
-  border: "solid",
-  borderWidth: "thin",
-  borderColor: "#daeeee",
-  margin: "0"
-})
+const StyledSpanTweet = styled.p`
+  border: solid;
+  border-width: thin;
+  border-color: #daeeee;
+  margin: 0;
+`
 
 const Tweet : NextPage = () => {
   return (
