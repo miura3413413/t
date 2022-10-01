@@ -17,16 +17,21 @@ import Image from "next/image";
 const StyledDiv = styled("div")({
   width: "25%",
   height: "100%",
-//  backgroundColor: "gray",
+  position: "sticky",
+  top: "0",
+  "@media (max-width: 1200px)": {
+    width:"15%",
+    margin: "0 0 0 30px",
+  },
+  "@media(max-width: 520px)":{
+    width: "10%",
+  }
 })
 
 const StyledItem = styled("div")({
   width: "fit-content",
   paddingTop: "10px",
   margin: "20px auto 0 auto",
-  "@media (max-width: 1200px)": {
-    margin: "20px auto 10px auto"
-  },
 })
 
 const Sidebar: NextPage = () => {

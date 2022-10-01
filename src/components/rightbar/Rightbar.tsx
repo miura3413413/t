@@ -6,10 +6,11 @@ import styled from '@emotion/styled'
 const StyledDiv = styled("div")({
   width: "30%",
   height: "100%",
+  position: "sticky",
+  top: "0",
   "@media (max-width: 1000px)": {
     display: "none"
   },
-//  backgroundColor: "cyan"
 })
  
 const Rightbar: NextPage = () => {

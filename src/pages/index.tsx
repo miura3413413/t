@@ -9,7 +9,7 @@ import { styled } from '@mui/material/styles';
 
 const Home: NextPage = () => {
 const StyledMain = styled("main")({
-  display: "flex"
+  display: "flex",
 })
 
 
