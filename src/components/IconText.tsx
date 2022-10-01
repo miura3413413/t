@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { SvgIconTypeMap,  } from "@mui/material"
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
@@ -19,7 +20,7 @@ const StyledP = styled.p`
   width: 100%;
   margin: 20px;
   @media (max-width: 1200px) {
-    display: none;
+    display: none; 
   };
 `
   
@@ -29,7 +30,7 @@ export const IconText = ({Icon, text}: Props) => {
   return(
     <StyledDiv>
       <Icon /> 
-      <StyledP>{text}</StyledP>
+      <StyledP >{text}</StyledP>
     </StyledDiv> 
 
   )

@@ -39,7 +39,7 @@ const Sidebar: NextPage = () => {
     <StyledDiv >
       <StyledItem>
         <Image  src="/2021 Twitter logo - blue.png"  width="25" height="25" objectFit="cover"/>
-      <IconText Icon={HomeIcon} text="ホーム"/>
+      <IconText Icon={HomeIcon} text="ホーム"  />
       <IconText Icon={SearchIcon} text="話題を検索"/>
       <IconText Icon={NotificationsNoneIcon} text="通知"/>
       <IconText Icon={MailOutlineIcon} text="メッセージ"/>

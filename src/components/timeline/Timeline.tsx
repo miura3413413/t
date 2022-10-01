@@ -48,9 +48,6 @@ const Timeline: NextPage = () => {
       <Tweet />
       <Tweet />
       <Tweet />
-      sition: "fixed,
-        top: "0", 
-          left:"10px",
       <Tweet />
     </StyledDiv>
   )
