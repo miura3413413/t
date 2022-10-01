@@ -53,7 +53,11 @@ const Tweet : NextPage = () => {
         <StyledSpanTime>時間</StyledSpanTime>
         <MoreHorizIcon sx={{margin: "auto 5px auto auto"}}/>
       </StyledDivTop>
-      <StyledSpanTweet>aaaaaaaaaassaあaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</StyledSpanTweet>
+      <StyledSpanTweet>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Nam, corporis dolor iusto ex voluptatem earum,
+          quae non qui quam tempore totam recusandae?
+           At quo accusamus ipsa maxime quaerat. Facilis, odit.
+      </StyledSpanTweet>
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
         <IconText Icon={ChatBubbleOutlineIcon} text={100} weight="lighter"/>
         <IconText Icon={AutorenewIcon} text={100} weight="lighter"/>
