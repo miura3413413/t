@@ -20,7 +20,7 @@ const StyledDivTop = styled.div`
 `
 
 const StyledTextarea = styled.textarea`
-  width: 300px;
+  width: 75%;
   height: 50px;
   border-width: 0 0 1px 0;
   border-color: #daeeee;
