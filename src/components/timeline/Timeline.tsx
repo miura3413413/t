@@ -6,28 +6,23 @@ import TweetSpace from "./TweetSpace";
 import Tweet from "../Tweet";
 
 const StyledDiv = styled.div`
-  width: 40%;
-  height: 100%;
+  width: 100%;
+  height: 90%;
   border: solid;
   border-width: thin;
   border-color: #daeeee;
   @media (max-width: 1200px) {
-    width: 55%;
+  //  width: 55%;
   };
   @media(max-width: 720px) {
-    width: 80%;
+   // width: 80%;
   };
 `
 
-const StyledHome = styled.h1`
-  margin: 20px;
-  font-size: 20px;
-`
 
 const Timeline: NextPage = () => {
   return (
     <StyledDiv >
-      <StyledHome>ホーム</StyledHome>
       <TweetSpace />
       <Tweet />
       <Tweet />

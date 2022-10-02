@@ -38,7 +38,7 @@ const StyledDivArticle = styled.div`
   background-color: #ecf2f3;
 `
 const StyledH3 = styled.h3`
-  font-weight: 900;
+  font-weight: 900;  
 `
 
 const Rightbar: NextPage = () => {

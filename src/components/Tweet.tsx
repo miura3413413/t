@@ -10,7 +10,7 @@ import { IconText } from "./IconText";
 
 const StyledDiv = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
   border: solid;
   border-width: thin;
   border-color: #daeeee;

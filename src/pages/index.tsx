@@ -5,12 +5,26 @@ import Sidebar from '../components/sidebar/Sidebar'
 import Timeline from '../components/timeline/Timeline'
 
 
-import { styled } from '@mui/material/styles';
+import styled from '@emotion/styled';
+import Topbar from '../components/topbar/Topbar'
 
+const StyledMain = styled.main`
+  display: flex;
+`
+
+const StyledDiv = styled.div`
+  flex-direction: column;
+  width: 40%;
+  margin-top: 0;
+  @media (max-width: 1200px) {
+    width: 55%;
+  };
+  @media(max-width: 720px) {
+    width: 80%;
+  };
+`
 const Home: NextPage = () => {
-const StyledMain = styled("main")({
-  display: "flex",
-})
+
 
 
   return (
@@ -21,7 +35,10 @@ const StyledMain = styled("main")({
 
       <StyledMain>
         <Sidebar />
-        <Timeline />
+        <StyledDiv>
+          <Topbar />
+          <Timeline />
+        </StyledDiv>
         <Rightbar />
       </StyledMain>
     </div>
