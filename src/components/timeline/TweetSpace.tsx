@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import ProfileIcon from "../ProfileIcon" 
+import ProfileIcon from "../icon/ProfileIcon" 
 import PermMediaIcon from '@mui/icons-material/PermMedia';import GifBoxIcon from '@mui/icons-material/GifBox';
 import PollIcon from '@mui/icons-material/Poll';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';

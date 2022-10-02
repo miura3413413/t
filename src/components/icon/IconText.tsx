@@ -20,7 +20,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   margin: 20px 50px 0 0;
-  
+
 `
 
 const StyledP = styled.p<PProps>`
@@ -37,7 +37,11 @@ const StyledP = styled.p<PProps>`
 export const IconText = ({Icon, text, display, weight}: Props) => {
   return(
     <StyledDiv>
-      <Icon /> 
+      <Icon sx={{ '&:hover': {
+        borderRadius: "50%",
+        backgroundColor: '#a0dce8ee',
+        
+      },}}/> 
       <StyledP  weight={weight} display={display}>{text}</StyledP>
     </StyledDiv> 
 

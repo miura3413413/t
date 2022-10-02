@@ -9,7 +9,7 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 
-import { IconText } from '../IconText';
+import { IconText } from '../icon/IconText';
 
 import styled from '@emotion/styled'
 import Image from "next/image";
