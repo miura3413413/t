@@ -67,11 +67,31 @@ const TweetSpace: NextPage = () => {
         <StyledTextarea  placeholder="今どうしてる？" />
       </StyledDivTop>
       <StyledDivBottom>
-        <PermMediaIcon />
-        <GifBoxIcon/>
-        <PollIcon />
-        <SentimentSatisfiedAltIcon />
-        <PendingActionsIcon />
+        <PermMediaIcon sx={{
+          '&:hover': {
+          borderRadius: "50%",
+          backgroundColor: '#a0dce8ee',
+        },}}/>
+        <GifBoxIcon sx={{
+          '&:hover': {
+          borderRadius: "50%",
+          backgroundColor: '#a0dce8ee',
+        },}}/>
+        <PollIcon sx={{
+          '&:hover': {
+          borderRadius: "50%",
+          backgroundColor: '#a0dce8ee',
+        },}}/>
+        <SentimentSatisfiedAltIcon sx={{
+          '&:hover': {
+          borderRadius: "50%",
+          backgroundColor: '#a0dce8ee',
+        },}}/>
+        <PendingActionsIcon sx={{
+          '&:hover': {
+          borderRadius: "50%",
+          backgroundColor: '#a0dce8ee',
+        },}}/>
         <StyledDivButton>
           <StyledButton>ツイートする</StyledButton>
         </StyledDivButton>
