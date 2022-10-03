@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Rightbar } from '../components/rightbar/Rightbar'
-import { Sidebar } from '../components/sidebar/Sidebar'
+import { Sidebar }from '../components/sidebar/Sidebar'
 import { Timeline } from '../components/timeline/Timeline'
-
 
 import styled from '@emotion/styled';
 import { Topbar } from '../components/topbar/Topbar'

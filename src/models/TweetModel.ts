@@ -6,8 +6,13 @@ const TweetSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
+    reply: {
+      type: Number,
+      default: 0
+    },
+    retweet: {
+      type: Number,
+      default: 0
     },
     like: {
       type: Number,
