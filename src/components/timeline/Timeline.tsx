@@ -1,9 +1,7 @@
 import { NextPage } from "next"
-
-
 import styled from '@emotion/styled'
-import TweetSpace from "./TweetSpace";
-import Tweet from "../Tweet";
+import { TweetSpace } from "./TweetSpace";
+import { Tweet } from "../Tweet";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -20,7 +18,7 @@ const StyledDiv = styled.div`
 `
 
 
-const Timeline: NextPage = () => {
+export const Timeline: NextPage = () => {
   return (
     <StyledDiv >
       <TweetSpace />
@@ -49,5 +47,3 @@ const Timeline: NextPage = () => {
 
 }
 
-
-export default Timeline

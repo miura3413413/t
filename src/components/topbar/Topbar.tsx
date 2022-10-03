@@ -1,6 +1,4 @@
 import { NextPage } from "next"
-
-
 import styled from '@emotion/styled'
 
 const StyledDiv = styled.div`
@@ -25,7 +23,7 @@ const StyledHome = styled.h1`
   padding-left: 5px;
 `
 
-const Topbar: NextPage = () => {
+export const Topbar: NextPage = () => {
   return (
     <StyledDiv >
       <StyledHome>ホーム</StyledHome>
@@ -34,5 +32,3 @@ const Topbar: NextPage = () => {
 
 }
 
-
-export default Topbar 

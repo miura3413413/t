@@ -1,7 +1,8 @@
 import { NextPage } from "next"
-import ProfileIcon from "./icon/ProfileIcon"
-import  IconText  from "./icon/IconText";
+import { ProfileIcon } from "./icon/ProfileIcon"
+import { IconText } from "./icon/IconText";
 import styled from '@emotion/styled'
+
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -42,7 +43,7 @@ const StyledSpanTweet = styled.span`
   overflow-wrap: break-word;
 `
 
-const Tweet : NextPage = () => {
+export const Tweet : NextPage = () => {
   return (
   <StyledDiv>
     <ProfileIcon />
@@ -66,4 +67,3 @@ const Tweet : NextPage = () => {
     </StyledDiv>
   )
 }
-export default Tweet

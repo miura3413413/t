@@ -1,15 +1,15 @@
 import { NextPage } from "next"
-import ProfileIcon from "../icon/ProfileIcon" 
-import PermMediaIcon from '@mui/icons-material/PermMedia';import GifBoxIcon from '@mui/icons-material/GifBox';
-import PollIcon from '@mui/icons-material/Poll';
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import PendingActionsIcon from '@mui/icons-material/PendingActions';
-
+import { ProfileIcon } from "../icon/ProfileIcon" 
 import styled from '@emotion/styled'
 import { useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 
+import PermMediaIcon from '@mui/icons-material/PermMedia';
+import PollIcon from '@mui/icons-material/Poll';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import PendingActionsIcon from '@mui/icons-material/PendingActions';
+import GifBoxIcon from '@mui/icons-material/GifBox';
 
 const StyledDiv = styled.div`
   margin-right: 30px;
@@ -62,7 +62,7 @@ const StyledDivButton = styled.div`
 
 
 
-const TweetSpace: NextPage = () => {
+export const TweetSpace: NextPage = () => {
   const text = useRef<HTMLTextAreaElement>(null)
   const router = useRouter()
 
@@ -119,6 +119,3 @@ const TweetSpace: NextPage = () => {
 
   )
 }
-
-
-export default TweetSpace

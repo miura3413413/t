@@ -1,6 +1,4 @@
 import { NextPage } from "next"
-
-
 import styled from '@emotion/styled'
 
 const StyledDiv = styled.div`
@@ -41,7 +39,7 @@ const StyledH3 = styled.h3`
   font-weight: 900;  
 `
 
-const Rightbar: NextPage = () => {
+export const Rightbar: NextPage = () => {
   return (
     <StyledDiv >
       <StyledInput type="search" placeholder="キーワード検索" />
@@ -65,4 +63,3 @@ const Rightbar: NextPage = () => {
 }
 
 
-export default Rightbar 

@@ -1,8 +1,8 @@
-/** @jsxImportSource @emotion/react */
+import styled from '@emotion/styled'
+
 import { SvgIconTypeMap,  } from "@mui/material"
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
-import styled from '@emotion/styled'
 
 interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
@@ -34,7 +34,7 @@ const StyledP = styled.p<PProps>`
   
 
 
-const IconText = ({Icon, text, display, weight}: Props) => {
+export const IconText = ({Icon, text, display, weight}: Props) => {
   return(
     <StyledDiv>
       <Icon sx={{ '&:hover': {
@@ -48,4 +48,4 @@ const IconText = ({Icon, text, display, weight}: Props) => {
   )
 }
 
-export default IconText
+

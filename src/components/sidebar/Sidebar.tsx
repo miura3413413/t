@@ -1,4 +1,8 @@
 import { NextPage } from "next"
+import { IconText } from '../icon/IconText';
+import styled from '@emotion/styled'
+import Image from "next/image";
+
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -7,12 +11,6 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-
-
-import { IconText } from '../icon/IconText';
-
-import styled from '@emotion/styled'
-import Image from "next/image";
 
 const StyledDiv = styled.div`
   width: 25%;
@@ -34,7 +32,7 @@ const StyledItem = styled.div`
   margin: 20px auto 0 auto;
 `
 
-const Sidebar: NextPage = () => {
+export const Sidebar: NextPage = () => {
   return (
     <StyledDiv >
       <StyledItem>
@@ -54,4 +52,3 @@ const Sidebar: NextPage = () => {
 }
 
 
-export default Sidebar
