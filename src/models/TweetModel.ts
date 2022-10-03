@@ -19,6 +19,6 @@ const TweetSchema = new Schema(
   },
 );
 
-const Post = models.Post || model("Post", TweetSchema)
+const Tweet = models.Tweet || model("Tweet", TweetSchema)
 
-export default Post;
+export default Tweet;

@@ -67,11 +67,11 @@ export const TweetSpace: NextPage = () => {
   const router = useRouter()
 
   const doClick = async() => {
-    const post = {
+    const tweet = {
       text: text.current?.value
     }
     try {
-      await axios.post("test/add", post)
+      await axios.post("/api/test/tweet", tweet)
       router.reload()
     } catch(err) {
       console.log(err)
