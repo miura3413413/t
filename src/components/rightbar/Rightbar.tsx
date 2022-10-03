@@ -25,16 +25,26 @@ const StyledInput = styled.input`
   margin: 10px 20px auto 20px;
   :focus {
   background-color: white;
-
 }
 `
+const StyledDivInput = styled.div`
+  @media(max-width: 1000px) {
+    display: none;
+  }
+`
+
 const StyledDivArticle = styled.div`
   width: 300px;
   height: 100%;
   margin: 20px;
   padding: 10px;
+  border-radius: 20px;
   background-color: #ecf2f3;
+  @media(max-width: 1000px) {
+    display: none;
+  }
 `
+
 const StyledH3 = styled.h3`
   font-weight: 900;  
 `
@@ -42,21 +52,22 @@ const StyledH3 = styled.h3`
 export const Rightbar: NextPage = () => {
   return (
     <StyledDiv >
+      <StyledDivInput>
       <StyledInput type="search" placeholder="キーワード検索" />
+      </StyledDivInput>
       <StyledDivArticle>
-      <StyledH3>いまどうしてる？</StyledH3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Exercitationem, eligendi cupiditate hic eaque,
-          animi aut quia suscipit porro laudantium soluta veritatis est.
-           Suscipit doloremque eligendi numquam quod quia ut laboriosam.
-      </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Exercitationem, eligendi cupiditate hic eaque,
-          animi aut quia suscipit porro laudantium soluta veritatis est.
-           Suscipit doloremque eligendi numquam quod quia ut laboriosam.
-      </p>
+        <StyledH3>いまどうしてる？</StyledH3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem, eligendi cupiditate hic eaque,
+            animi aut quia suscipit porro laudantium soluta veritatis est.
+            Suscipit doloremque eligendi numquam quod quia ut laboriosam.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem, eligendi cupiditate hic eaque,
+            animi aut quia suscipit porro laudantium soluta veritatis est.
+            Suscipit doloremque eligendi numquam quod quia ut laboriosam.
+        </p>
       </StyledDivArticle>
-
     </StyledDiv>
   )
 
