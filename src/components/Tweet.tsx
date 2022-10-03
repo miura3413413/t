@@ -1,12 +1,11 @@
 import { NextPage } from "next"
 import ProfileIcon from "./icon/ProfileIcon"
+import  IconText  from "./icon/IconText";
 import styled from '@emotion/styled'
-
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { IconText } from "./icon/IconText";
 
 const StyledDiv = styled.div`
   width: 100%;

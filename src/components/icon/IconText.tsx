@@ -34,7 +34,7 @@ const StyledP = styled.p<PProps>`
   
 
 
-export const IconText = ({Icon, text, display, weight}: Props) => {
+const IconText = ({Icon, text, display, weight}: Props) => {
   return(
     <StyledDiv>
       <Icon sx={{ '&:hover': {
@@ -47,3 +47,5 @@ export const IconText = ({Icon, text, display, weight}: Props) => {
 
   )
 }
+
+export default IconText

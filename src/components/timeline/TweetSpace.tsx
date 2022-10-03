@@ -6,6 +6,9 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 
 import styled from '@emotion/styled'
+import { useRef } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 
 const StyledDiv = styled.div`
@@ -60,11 +63,26 @@ const StyledDivButton = styled.div`
 
 
 const TweetSpace: NextPage = () => {
+  const text = useRef<HTMLTextAreaElement>(null)
+  const router = useRouter()
+
+  const doClick = async() => {
+    const post = {
+      text: text.current?.value
+    }
+    try {
+      await axios.post("test/add", post)
+      router.reload()
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
   return(
     <StyledDiv>
       <StyledDivTop>
         <ProfileIcon />
-        <StyledTextarea  placeholder="今どうしてる？" />
+        <StyledTextarea  placeholder="今どうしてる？" ref={text}/>
       </StyledDivTop>
       <StyledDivBottom>
         <PermMediaIcon sx={{
@@ -93,7 +111,7 @@ const TweetSpace: NextPage = () => {
           backgroundColor: '#a0dce8ee',
         },}}/>
         <StyledDivButton>
-          <StyledButton>ツイートする</StyledButton>
+          <StyledButton onClick={ doClick }>ツイートする</StyledButton>
         </StyledDivButton>
       </StyledDivBottom>
     </StyledDiv>

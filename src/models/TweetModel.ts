@@ -11,7 +11,6 @@ const TweetSchema = new Schema(
     },
     like: {
       type: Number,
-      required: true,
       default: 0,
     },
   },
