@@ -10,6 +10,7 @@ const StyledDiv = styled.div`
   border-width: thin;
   border-color: #daeeee;
   border-bottom: none;
+  border-top: none;
   @media (max-width: 1200px) {
   //  width: 55%;
   };
