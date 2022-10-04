@@ -43,7 +43,7 @@ export const IconText = ({Icon, text, display, weight, stateFunction  }: Props) 
         borderRadius: "50%",
         backgroundColor: '#a0dce8ee',
         
-      },}} onClick={() => stateFunction()}/> 
+      },}} onClick={() => stateFunction? stateFunction() : null }/> 
       <StyledP  weight={weight} display={display}>{text}</StyledP>
     </StyledDiv> 
 
