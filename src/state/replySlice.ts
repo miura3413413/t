@@ -6,13 +6,13 @@ export const replySlice = createSlice(
     name: "reply",
     initialState: {
       value: 0,
-      isLike: false
+      isReply: false
     },
     reducers: {
       changeReply: (state) => {
         const newState = { ...state }
-        newState.value = state.isLike ? state.value - 1 : state.value + 1;
-        newState.isLike = !state.isLike
+        newState.value = state.isReply ? state.value - 1 : state.value + 1;
+        newState.isReply = !state.isReply
         return newState
       }
     }

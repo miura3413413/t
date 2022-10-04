@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 
 import { SvgIconTypeMap,  } from "@mui/material"
 import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { useDispatch } from 'react-redux';
 ;
 
 
@@ -38,14 +37,13 @@ const StyledP = styled.p<PProps>`
 
 
 export const IconText = ({Icon, text, display, weight, stateFunction  }: Props) => {
-  const dispatch = useDispatch()
   return(
     <StyledDiv>
       <Icon sx={{ '&:hover': {
         borderRadius: "50%",
         backgroundColor: '#a0dce8ee',
         
-      },}} onClick={() => dispatch(stateFunction)}/> 
+      },}} onClick={() => stateFunction()}/> 
       <StyledP  weight={weight} display={display}>{text}</StyledP>
     </StyledDiv> 
 

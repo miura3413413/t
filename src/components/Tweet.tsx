@@ -7,11 +7,8 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import {  useSelector } from "react-redux";
-import { LikeState, ReplyState, RetweetState } from "../state/store";
-import { changeLike } from "../state/likeSlice";
-import { changeReply } from "../state/replySlice";
-import { changeretweet } from "../state/retweetSlice";
+import { dummyTweetType } from "../models/dummydata";
+import { useState } from "react";
 
 
 
@@ -50,11 +47,19 @@ const StyledSpanTweet = styled.span`
   overflow-wrap: break-word;
 `
 
-export const Tweet : NextPage = () => {
-  const like  = useSelector((state: LikeState) => state.like.value)
-  const reply  = useSelector((state: ReplyState) => state.reply.value)
-  const retweet  = useSelector((state: RetweetState) => state.retweet.value)
-
+export const Tweet : NextPage<{dummyTweet: dummyTweetType}> = ({dummyTweet}) => {
+const [retweet ,setRetweet] = useState(dummyTweet.retweet)
+const [isRetweet ,setIsRetweet] = useState(false)
+const [like ,setLike] = useState(dummyTweet.like)
+const [isLike ,setIsLike] = useState(false)
+const clickRetweet = () => {
+  setRetweet(isRetweet? retweet -1 : retweet +1)
+  setIsRetweet(!isRetweet)
+}
+const clickLike = () => {
+  setLike(isLike? like -1 : like +1)
+  setIsLike(!isLike)
+}
   return (
   <StyledDiv>
     <ProfileIcon />
@@ -64,15 +69,13 @@ export const Tweet : NextPage = () => {
         <StyledSpanTime>時間</StyledSpanTime>
         <MoreHorizIcon sx={{margin: "auto 5px auto auto"}}/>
       </StyledDivTop>
-      <StyledSpanTweet>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Nam, corporis dolor iusto ex voluptatem earum,
-          quae non qui quam tempore totam recusandae?
-           At quo accusamus ipsa maxime quaerat. Facilis, odit.
+      <StyledSpanTweet>
+        {dummyTweet.text}
       </StyledSpanTweet>
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
-        <IconText Icon={ChatBubbleOutlineIcon} text={retweet} weight="lighter" stateFunction={changeretweet()}/>
-        <IconText Icon={AutorenewIcon} text={reply} weight="lighter" stateFunction={changeReply()}/>
-        <IconText Icon={FavoriteBorderIcon} text={like} weight="lighter" stateFunction={changeLike()}/>
+        <IconText Icon={ChatBubbleOutlineIcon} text={dummyTweet.reply} weight="lighter" />
+        <IconText Icon={AutorenewIcon} text={retweet} weight="lighter" stateFunction={clickRetweet}/>
+        <IconText Icon={FavoriteBorderIcon} text={like} weight="lighter" stateFunction={clickLike}/>
       </div>
     </StyledDivRight>
     </StyledDiv>
