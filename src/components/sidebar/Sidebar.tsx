@@ -11,6 +11,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { IconButton } from "@mui/material";
 
 const StyledDiv = styled.div`
   width: 25%;
@@ -22,7 +23,8 @@ const StyledDiv = styled.div`
     margin: 0 0 0 30px;
   };
   @media(max-width: 520px) {
-    width: 10%;
+    width: 15%;
+    margin-left: 20px;
   }
 `
 
@@ -36,7 +38,9 @@ export const Sidebar: NextPage = () => {
   return (
     <StyledDiv >
       <StyledItem>
-        <Image  src="/2021 Twitter logo - blue.png"  width="25" height="25" objectFit="cover"/>
+        <IconButton size="large" color="info">
+          <Image  src="/2021 Twitter logo - blue.png"  width="25" height="25" objectFit="cover" />
+        </IconButton>
         <IconText Icon={HomeIcon} text="ホーム" display="none" weight="bold" />
         <IconText Icon={SearchIcon} text="話題を検索" display="none" weight="bold"/>
         <IconText Icon={NotificationsNoneIcon} text="通知" display="none" weight="bold"/>

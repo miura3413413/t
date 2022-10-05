@@ -4,6 +4,7 @@ import { SvgIconTypeMap,  } from "@mui/material"
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 ;
 
+import { IconButton } from "@mui/material";
 
 interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
@@ -15,19 +16,21 @@ interface Props {
 interface PProps {
   display?: string
   weight: string
+  sx: {
+    marginLeft: string;
+}
 }
 
 const StyledDiv = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
+
   margin: 20px 50px 0 0;
 
 `
 
 const StyledP = styled.p<PProps>`
   width: 100%;
-  margin: 20px;
   font-weight: ${props => props.weight};
   @media (max-width: 1200px) {
     display: ${props => props.display}; 
@@ -39,12 +42,10 @@ const StyledP = styled.p<PProps>`
 export const IconText = ({Icon, text, display, weight, stateFunction  }: Props) => {
   return(
     <StyledDiv>
-      <Icon sx={{ '&:hover': {
-        borderRadius: "50%",
-        backgroundColor: '#a0dce8ee',
-        
-      },}} onClick={() => stateFunction? stateFunction() : null }/> 
-      <StyledP  weight={weight} display={display}>{text}</StyledP>
+      <IconButton size="large" color="info" sx={{margin: "3px"}}>
+      <Icon sx={{color:"black"}} onClick={() => stateFunction? stateFunction() : null }/> 
+      </IconButton>
+      <StyledP  weight={weight} display={display} sx={{marginLeft:"10px"}}>{text}</StyledP>
     </StyledDiv> 
 
   )

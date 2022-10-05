@@ -10,6 +10,7 @@ import PollIcon from '@mui/icons-material/Poll';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import GifBoxIcon from '@mui/icons-material/GifBox';
+import { IconButton } from "@mui/material";
 
 const StyledDiv = styled.div`
   margin-right: 30px;
@@ -37,6 +38,7 @@ const StyledDivBottom = styled.div`
   align-items: center;
   gap: 10px;
   margin: 10px auto 20px 80px;
+  justify-content: center;
 `
 
 
@@ -85,31 +87,21 @@ export const TweetSpace: NextPage = () => {
         <StyledTextarea  placeholder="今どうしてる？" ref={text}/>
       </StyledDivTop>
       <StyledDivBottom>
-        <PermMediaIcon sx={{
-          '&:hover': {
-          borderRadius: "50%",
-          backgroundColor: '#a0dce8ee',
-        },}}/>
-        <GifBoxIcon sx={{
-          '&:hover': {
-          borderRadius: "50%",
-          backgroundColor: '#a0dce8ee',
-        },}}/>
-        <PollIcon sx={{
-          '&:hover': {
-          borderRadius: "50%",
-          backgroundColor: '#a0dce8ee',
-        },}}/>
-        <SentimentSatisfiedAltIcon sx={{
-          '&:hover': {
-          borderRadius: "50%",
-          backgroundColor: '#a0dce8ee',
-        },}}/>
-        <PendingActionsIcon sx={{
-          '&:hover': {
-          borderRadius: "50%",
-          backgroundColor: '#a0dce8ee',
-        },}}/>
+        <IconButton size="medium" color="info">
+          <PermMediaIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+        </IconButton>
+        <IconButton size="medium" color="info">
+          <GifBoxIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+        </IconButton>
+        <IconButton size="medium" color="info">
+          <PollIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+        </IconButton>
+        <IconButton size="medium" color="info">
+          <SentimentSatisfiedAltIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+        </IconButton>
+        <IconButton size="medium" color="info">
+          <PendingActionsIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+        </IconButton>
         <StyledDivButton>
           <StyledButton onClick={ doClick }>ツイートする</StyledButton>
         </StyledDivButton>
