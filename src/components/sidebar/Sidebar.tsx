@@ -18,6 +18,7 @@ const StyledDiv = styled.div`
   height: 100%;
   position: sticky;
   top: 0;
+  justify-content: center;
   @media (max-width: 1200px) {
     width:15%;
     margin: 0 0 0 30px;
@@ -31,7 +32,7 @@ const StyledDiv = styled.div`
 const StyledItem = styled.div`
   width: fit-content;
   padding-top: 10px;
-  margin: 20px auto 0 auto;
+  margin: 10px 40px 0 auto;
 `
 
 export const Sidebar: NextPage = () => {
