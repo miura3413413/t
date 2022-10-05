@@ -6,6 +6,8 @@ import { Timeline } from '../components/timeline/Timeline'
 
 import styled from '@emotion/styled';
 import { Topbar } from '../components/topbar/Topbar'
+import axios from 'axios'
+
 
 const StyledMain = styled.main`
   display: flex;
@@ -22,7 +24,7 @@ const StyledDiv = styled.div`
     width: 80%;
   };
 `
-const Home: NextPage = () => {
+export const Home: NextPage = () => {
 
 
 
@@ -44,5 +46,18 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
 
+export async function getServerSideProps() {
+  try{
+    const res = await axios.get("/api/test/tweet")
+    console.log(res)
+
+  } catch(err) {
+    console.log(err)
+  }
+  
+  // Pass data to the page via props
+  return { props: {}}
+}
+
+export default Home

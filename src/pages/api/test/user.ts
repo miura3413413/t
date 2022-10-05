@@ -3,6 +3,7 @@ import connectMongo from "../../../../util/connect"
 import User from "../../../models/UserModel"
 
 export default async function addUser(req: NextApiRequest, res: NextApiResponse) {
+
   await connectMongo()
   if (req.method === "POST") {
     try {

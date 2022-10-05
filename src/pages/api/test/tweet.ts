@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import connectMongo from "../../../../util/connect"
-import Tweet from "../../../models/TweetModel"
+import { Tweet } from "../../../models/TweetModel"
 
-export default async function addTweet(req: NextApiRequest, res: NextApiResponse) {
+export default async function adsdTweet(req: NextApiRequest, res: NextApiResponse) {
   await connectMongo()
   if (req.method === "POST") {
     try {
@@ -13,9 +13,9 @@ export default async function addTweet(req: NextApiRequest, res: NextApiResponse
       console.log(error);
       res.status(500).json({ error });
     }
-  } else if (req.method === "get") {
+  } else if (req.method === "GET") {
     try {
-      const tweet = await new Tweet(req.body)
+      const tweet = await Tweet.find()
       return res.status(200).json(tweet);
     } catch (error) {
       console.log(error);

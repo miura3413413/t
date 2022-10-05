@@ -24,6 +24,13 @@ const TweetSchema = new Schema(
   },
 );
 
-const Tweet = models.Tweet || model("Tweet", TweetSchema)
+export const Tweet = models.Tweet || model("Tweet", TweetSchema)
 
-export default Tweet;
+export interface TweetType {
+  _id: string
+  text: string
+  reply: number
+  retweet: number
+  like: number
+}
+//export default Tweet;

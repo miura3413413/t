@@ -67,7 +67,7 @@ export const TweetSpace: NextPage = () => {
   const router = useRouter()
 
   const doClick = async() => {
-    const tweet = {
+     const tweet = {
       text: text.current?.value
     }
     try {

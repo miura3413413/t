@@ -6,9 +6,11 @@ import styled from '@emotion/styled'
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { dummyTweetType } from "../models/dummydata";
 import { useState } from "react";
+import { TweetType } from "../models/TweetModel";
+import { IconButton } from "@mui/material";
 
 
 
@@ -47,18 +49,23 @@ const StyledSpanTweet = styled.span`
   overflow-wrap: break-word;
 `
 
-export const Tweet : NextPage<{dummyTweet: dummyTweetType}> = ({dummyTweet}) => {
-const [retweet ,setRetweet] = useState(dummyTweet.retweet)
+export const Tweet : NextPage<{tweet: TweetType}> = ({tweet}) => {
+const [retweet ,setRetweet] = useState(tweet.retweet)
 const [isRetweet ,setIsRetweet] = useState(false)
-const [like ,setLike] = useState(dummyTweet.like)
+const [like ,setLike] = useState(tweet.like)
 const [isLike ,setIsLike] = useState(false)
 const clickRetweet = () => {
   setRetweet(isRetweet? retweet -1 : retweet +1)
   setIsRetweet(!isRetweet)
 }
+
 const clickLike = () => {
   setLike(isLike? like -1 : like +1)
   setIsLike(!isLike)
+}
+
+const clickDelete = () => {
+  console.log("called")
 }
   return (
   <StyledDiv>
@@ -67,13 +74,15 @@ const clickLike = () => {
       <StyledDivTop >
         <StyledSpanName>名前</StyledSpanName>
         <StyledSpanTime>時間</StyledSpanTime>
-        <MoreHorizIcon sx={{margin: "auto 5px auto auto"}}/>
+        <IconButton aria-label="delete" onClick={clickDelete} sx={{margin: "auto 5px auto auto"}}>
+          <DeleteForeverIcon />
+        </IconButton>
       </StyledDivTop>
       <StyledSpanTweet>
-        {dummyTweet.text}
+        {tweet.text}
       </StyledSpanTweet>
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
-        <IconText Icon={ChatBubbleOutlineIcon} text={dummyTweet.reply} weight="lighter" />
+        <IconText Icon={ChatBubbleOutlineIcon} text={tweet.reply} weight="lighter" />
         <IconText Icon={AutorenewIcon} text={retweet} weight="lighter" stateFunction={clickRetweet}/>
         <IconText Icon={FavoriteBorderIcon} text={like} weight="lighter" stateFunction={clickLike}/>
       </div>
