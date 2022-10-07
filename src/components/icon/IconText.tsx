@@ -42,8 +42,8 @@ const StyledP = styled.p<PProps>`
 export const IconText = ({Icon, text, display, weight, stateFunction  }: Props) => {
   return(
     <StyledDiv>
-      <IconButton size="large" color="info" sx={{margin: "3px"}}>
-      <Icon sx={{color:"black"}} onClick={() => stateFunction? stateFunction() : null }/> 
+      <IconButton size="large" color="info" sx={{margin: "3px"}} onClick={() => stateFunction? stateFunction() : null }>
+        <Icon sx={{color:"black"}} /> 
       </IconButton>
       <StyledP  weight={weight} display={display} sx={{marginLeft:"10px"}}>{text}</StyledP>
     </StyledDiv> 

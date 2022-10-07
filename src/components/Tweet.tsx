@@ -11,8 +11,8 @@ import { dummyTweetType } from "../models/dummydata";
 import { useState } from "react";
 import { TweetType } from "../models/TweetModel";
 import { IconButton } from "@mui/material";
-
-
+import axios from "axios";
+import { useRouter } from "next/router";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -50,6 +50,7 @@ const StyledSpanTweet = styled.span`
 `
 
 export const Tweet : NextPage<{tweet: TweetType}> = ({tweet}) => {
+const router = useRouter()
 const [retweet ,setRetweet] = useState(tweet.retweet)
 const [isRetweet ,setIsRetweet] = useState(false)
 const [like ,setLike] = useState(tweet.like)
@@ -64,9 +65,14 @@ const clickLike = () => {
   setIsLike(!isLike)
 }
 
-const clickDelete = () => {
-  console.log("called")
-}
+//const clickDelete = async() => { {
+//   try {
+//     await axios.delete("/api/test/tweet")
+//     router.reload()
+//   } catch(err) {
+//     console.log(err)
+//   }
+//}
   return (
   <StyledDiv>
     <ProfileIcon />
@@ -74,7 +80,7 @@ const clickDelete = () => {
       <StyledDivTop >
         <StyledSpanName>名前</StyledSpanName>
         <StyledSpanTime>時間</StyledSpanTime>
-        <IconButton aria-label="delete" onClick={clickDelete} sx={{margin: "auto 5px auto auto"}}>
+        <IconButton aria-label="delete"  sx={{margin: "auto 5px auto auto"}}>
           <DeleteForeverIcon />
         </IconButton>
       </StyledDivTop>
