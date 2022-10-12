@@ -49,7 +49,7 @@ const StyledSpanTweet = styled.span`
   overflow-wrap: break-word;
 `
 
-export const Tweet : NextPage<{tweet: TweetType}> = ({tweet}) => {
+export const Tweet : NextPage<{tweet: dummyTweetType}> = ({tweet}) => {
 const router = useRouter()
 const [retweet ,setRetweet] = useState(tweet.retweet)
 const [isRetweet ,setIsRetweet] = useState(false)

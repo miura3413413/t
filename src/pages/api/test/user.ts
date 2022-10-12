@@ -5,13 +5,11 @@ import User from "../../../models/UserModel"
 export default async function addUser(req: NextApiRequest, res: NextApiResponse) {
 
   await connectMongo()
-  if (req.method === "POST") {
+  if (req.method === "GET") {
     try {
-      const newUser = await new User({
-        name: req.body.name,
-      })
-      const user = await newUser.save()
-      return res.status(200).json(user);
+      const newUser = await User.findById(res)
+      console.log(newUser)
+      return res.status(200).json(newUser);
     } catch (error) {
       console.log(error);
       res.status(500).json({ error });

@@ -14,51 +14,29 @@ const StyledDiv = styled.div`
   border-color: #daeeee;
   border-bottom: none;
   border-top: none;
-  @media (max-width: 1200px) {
-  //  width: 55%;
-  };
-  @media(max-width: 720px) {
-   // width: 80%;
-  };
+
 `
 
-
 export const Timeline: NextPage = () => {
-  const [tweets, setTweets] = useState<TweetType[]>([]);
-  useEffect(() => {
-    const fetchTweet = async() => {
-      const res = await axios.get("/api/test/tweet")
-      setTweets(res.data)
-      return tweets
-    }
-    fetchTweet()
-  }, []);
+  
+  // const [tweets, setTweets] = useState<TweetType[]>([]);
+  // useEffect(() => {
+  //   const fetchTweet = async() => {
+  //     const res = await axios.get("/api/test/tweet")
+  //     setTweets(res.data)
+  //     return tweets
+  //   }
+  //   fetchTweet()
+  // }, []);
   return (
-    <StyledDiv >
+    <StyledDiv>
       <TweetSpace />
-      {tweets.map((tweet) => (
+      {dummyTweets.map((tweet) => (
         <Tweet tweet={tweet} key={tweet._id}/>
       ))}
-      {/* <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet /> */}
+      {/* {tweets.map((tweet) => (
+        <Tweet tweet={tweet} key={tweet._id}/>
+      ))} */}
     </StyledDiv>
   )
 

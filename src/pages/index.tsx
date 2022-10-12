@@ -24,7 +24,7 @@ const StyledDiv = styled.div`
     width: 80%;
   };
 `
-export const Home: NextPage = () => {
+export const Home: NextPage = ( ) => {
 
 
 
@@ -38,7 +38,7 @@ export const Home: NextPage = () => {
         <Sidebar />
         <StyledDiv>
           <Topbar />
-          <Timeline />
+          <Timeline/>
         </StyledDiv>
         <Rightbar />
       </StyledMain>
@@ -46,18 +46,13 @@ export const Home: NextPage = () => {
   )
 }
 
-
-export async function getServerSideProps() {
-  try{
-    const res = await axios.get("/api/test/tweet")
-    console.log(res)
-
-  } catch(err) {
-    console.log(err)
-  }
-  
-  // Pass data to the page via props
-  return { props: {}}
-}
-
 export default Home
+
+// export const getServerSideProps = async () => {
+
+//   const mydomain = process.env.MY_DOMAIN
+//   const tweets = await axios.get(mydomain + "/api/test/tweet")
+
+//   return { props: {tweets: tweets.data}}
+// }
+
