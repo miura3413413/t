@@ -5,6 +5,7 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 ;
 
 import { IconButton } from "@mui/material";
+import Link from 'next/link';
 
 interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
@@ -12,6 +13,7 @@ interface Props {
   display?: string
   weight: string
   stateFunction?: any
+  destination?: string
 }
 interface PProps {
   display?: string
@@ -39,12 +41,17 @@ const StyledP = styled.p<PProps>`
   
 
 
-export const IconText = ({Icon, text, display, weight, stateFunction  }: Props) => {
+export const IconText = ({Icon, text, display, weight, stateFunction, destination   }: Props) => {
   return(
     <StyledDiv>
-      <IconButton size="large" color="info" sx={{margin: "3px"}} onClick={() => stateFunction? stateFunction() : null }>
+      <Link href={`/${destination}`}>
+        <IconButton size="large" color="info" sx={{margin: "3px"}} onClick={() => stateFunction? stateFunction() : null }>
         <Icon sx={{color:"black"}} /> 
       </IconButton>
+      </Link>
+ 
+
+
       <StyledP  weight={weight} display={display} sx={{marginLeft:"10px"}}>{text}</StyledP>
     </StyledDiv> 
 
