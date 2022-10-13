@@ -2,13 +2,13 @@ import { NextPage } from "next"
 import styled from '@emotion/styled'
 
 const StyledDiv = styled.div`
-  width: 30%;
+  width: 37%;
   height: 100%;
   position: sticky;
   top: 0;
   @media(max-width: 1000px) {
     visibility: hidden;
-    width: 5%;
+    width: 3%;
   };
 `
  

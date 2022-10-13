@@ -15,18 +15,22 @@ import { IconButton } from "@mui/material";
 import Link from "next/link";
 
 const StyledDiv = styled.div`
-  width: 25%;
+  width: 30%;
   height: 100%;
   position: sticky;
   top: 0;
   justify-content: center;
   @media (max-width: 1200px) {
-    width:15%;
-    margin: 0 0 0 30px;
+    width:13%;
+    padding-left:28px;
+  };
+  @media (max-width: 750px) {
+    padding-left:10px;
   };
   @media(max-width: 520px) {
-    width: 15%;
-    margin-left: 20px;
+    width: 13%;
+    margin-left: 0px;
+    padding: 0;
   }
 `
 
@@ -41,18 +45,18 @@ export const Sidebar: NextPage = () => {
     <StyledDiv >
       <StyledItem>
         <Link href={"/"}>
-          <IconButton size="large" color="info">
+          <IconButton size="large" color="info" sx={{margin:"3px"}}>
             <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
           </IconButton>
         </Link>
-        <IconText Icon={HomeIcon} text="ホーム" display="none" weight="bold" destination=""/>
-        <IconText Icon={SearchIcon} text="話題を検索" display="none" weight="bold"/>
-        <IconText Icon={NotificationsNoneIcon} text="通知" display="none" weight="bold" />
-        <IconText Icon={MailOutlineIcon} text="メッセージ" display="none" weight="bold" />
-        <IconText Icon={BookmarkBorderIcon} text="ブックマーク" display="none" weight="bold" />
-        <IconText Icon={ListAltIcon} text="リスト" display="none" weight="bold" />
-        <IconText Icon={PermIdentityIcon} text="プロフィール" display="none" weight="bold" destination="Profile"/>
-        <IconText Icon={MoreHorizIcon} text="もっと見る" display="none" weight="bold" />
+        <IconText Icon={HomeIcon} text="ホーム" destination=""/>
+        <IconText Icon={SearchIcon} text="話題を検索" />
+        <IconText Icon={NotificationsNoneIcon} text="通知"  />
+        <IconText Icon={MailOutlineIcon} text="メッセージ"  />
+        <IconText Icon={BookmarkBorderIcon} text="ブックマーク"  />
+        <IconText Icon={ListAltIcon} text="リスト"  />
+        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination="Profile"/>
+        <IconText Icon={MoreHorizIcon} text="もっと見る"  />
       </StyledItem>
     </StyledDiv>
   )

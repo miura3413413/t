@@ -17,13 +17,13 @@ const StyledMain = styled.main`
 
 const StyledDiv = styled.div`
   flex-direction: column;
-  width: 40%;
+  width: 33%;
   margin-top: 0;
   @media (max-width: 1200px) {
     width: 55%;
   };
   @media(max-width: 720px) {
-    width: 80%;
+    width: 85%;
   };
 `
 export const Layout: NextPage<Props> = ({ title, children }) => {
@@ -35,7 +35,7 @@ export const Layout: NextPage<Props> = ({ title, children }) => {
       <StyledMain>
         <Sidebar />
         <StyledDiv>
-          <Topbar />
+          <Topbar title={title}/>
           {children}
         </StyledDiv>
         <Rightbar />

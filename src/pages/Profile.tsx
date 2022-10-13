@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 export const Profile: NextPage = ( ) => {
   return (
     <Layout title={"プロフィール"}>
-      <Timeline/>
+      {/* <Timeline/> */}
     </Layout>
   )
 }

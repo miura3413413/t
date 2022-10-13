@@ -1,6 +1,10 @@
 import { NextPage } from "next"
 import styled from '@emotion/styled'
 
+interface Props {
+  title: string
+}
+
 const StyledDiv = styled.div`
   width: 100%;
   position: sticky;
@@ -23,10 +27,10 @@ const StyledHome = styled.h1`
   padding-left: 5px;
 `
 
-export const Topbar: NextPage = () => {
+export const Topbar: NextPage<Props> = ({ title }) => {
   return (
     <StyledDiv >
-      <StyledHome>ホーム</StyledHome>
+      <StyledHome>{title}</StyledHome>
     </StyledDiv>
   )
 

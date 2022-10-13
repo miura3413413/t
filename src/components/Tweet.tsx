@@ -13,6 +13,7 @@ import { TweetType } from "../models/TweetModel";
 import { IconButton } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { IconNumber } from "./icon/IconNumber";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -88,9 +89,9 @@ const clickLike = () => {
         {tweet.text}
       </StyledSpanTweet>
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
-        <IconText Icon={ChatBubbleOutlineIcon} text={tweet.reply} weight="lighter" />
-        <IconText Icon={AutorenewIcon} text={retweet} weight="lighter" stateFunction={clickRetweet}/>
-        <IconText Icon={FavoriteBorderIcon} text={like} weight="lighter" stateFunction={clickLike}/>
+        <IconNumber Icon={ChatBubbleOutlineIcon} number={tweet.reply} />
+        <IconNumber Icon={AutorenewIcon} number={retweet} stateFunction={clickRetweet}/>
+        <IconNumber Icon={FavoriteBorderIcon} number={like} stateFunction={clickLike}/>
       </div>
     </StyledDivRight>
     </StyledDiv>
