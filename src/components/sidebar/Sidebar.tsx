@@ -45,7 +45,7 @@ export const Sidebar: NextPage = () => {
     <StyledDiv >
       <StyledItem>
         <Link href={"/"}>
-          <IconButton size="large" color="info" sx={{margin:"3px"}}>
+          <IconButton size="large" color="info" sx={{margin:"4px"}}>
             <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
           </IconButton>
         </Link>

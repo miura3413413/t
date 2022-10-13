@@ -3,7 +3,6 @@ import { SvgIconTypeMap,  } from "@mui/material"
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { IconButton } from "@mui/material";
 import Link from 'next/link';
-import { textAlign } from '@mui/system';
 
 interface Props {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
@@ -14,13 +13,7 @@ interface Props {
 const StyledDiv = styled.div`
   width: 100%;
   display: flex;
-  margin: 15px 50px 0 0;
-  @media (max-width: 1200px) {
-    margin-top: 15px;
-    /* text-align: center; */
-    /* justify-content: center;
-    align-items: center; */
-  };
+  margin: 0 50px 0 0;
 `
 
 const StyledP = styled.p`
