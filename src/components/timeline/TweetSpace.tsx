@@ -92,10 +92,10 @@ export const TweetSpace: NextPage = () => {
         <TextareaAutosize
           style={{
             width: "75%",
+            paddingTop: "10px",
             borderWidth: "0 0 1px 0",
             borderColor: "#daeeee",
             outline: "none",
-            paddingLeft: "10px",
             fontSize: "20px",
             resize: "none",
           }}
