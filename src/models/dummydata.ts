@@ -29,7 +29,7 @@ export const dummyTweets = [
   },
   {
     _id: "4",
-    text: "test4",
+    text: "test4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     reply: 1000,
     retweet: 2000,
     like: 3000,

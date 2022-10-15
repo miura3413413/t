@@ -9,11 +9,6 @@ const StyledDiv = styled.div`
   width: 100%;
   position: sticky;
   top: 0;
-  border: solid;
-  border-width: thin;
-  border-color: #daeeee;
-  border-top: none;
-  border-bottom: none;
   margin-top: 0;
   padding: 10px;
   z-index: 1;

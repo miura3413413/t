@@ -14,6 +14,12 @@ import { IconButton } from "@mui/material";
 
 const StyledDiv = styled.div`
   margin-right: 30px;
+  border: solid;
+  border-width: thin;
+  border-color: #daeeee;
+
+  border-left: none;
+  border-top: none;
 `
 
 const StyledDivTop = styled.div`

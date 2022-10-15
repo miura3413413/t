@@ -1,19 +1,19 @@
 import { NextPage } from "next"
-import { ProfileIcon } from "./icon/ProfileIcon"
-import { IconText } from "./icon/IconText";
+import { ProfileIcon } from "../icon/ProfileIcon"
+import { IconText } from "../icon/IconText";
 import styled from '@emotion/styled'
 
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { dummyTweetType } from "../models/dummydata";
+import { dummyTweetType } from "../../models/dummydata";
 import { useState } from "react";
-import { TweetType } from "../models/TweetModel";
+import { TweetType } from "../../models/TweetModel";
 import { IconButton } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { IconNumber } from "./icon/IconNumber";
+import { IconNumber } from "../icon/IconNumber";
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -21,6 +21,8 @@ const StyledDiv = styled.div`
   border: solid;
   border-width: thin;
   border-color: #daeeee;
+  border-left: none;
+  border-top: none;
   display: flex;
 `
 
@@ -81,7 +83,7 @@ const clickLike = () => {
       <StyledDivTop >
         <StyledSpanName>名前</StyledSpanName>
         <StyledSpanTime>時間</StyledSpanTime>
-        <IconButton aria-label="delete"  sx={{margin: "auto 5px auto auto"}}>
+        <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto"}}>
           <DeleteForeverIcon />
         </IconButton>
       </StyledDivTop>
@@ -91,7 +93,7 @@ const clickLike = () => {
       <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
         <IconNumber Icon={ChatBubbleOutlineIcon} number={tweet.reply} />
         <IconNumber Icon={AutorenewIcon} number={retweet} stateFunction={clickRetweet}/>
-        <IconNumber Icon={FavoriteBorderIcon} number={like} stateFunction={clickLike}/>
+        <IconNumber Icon={FavoriteBorderIcon} number={like} stateFunction={clickLike} />
       </div>
     </StyledDivRight>
     </StyledDiv>

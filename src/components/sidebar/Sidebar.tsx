@@ -16,10 +16,16 @@ import Link from "next/link";
 
 const StyledDiv = styled.div`
   width: 30%;
-  height: 100%;
+  height: 100vh;
   position: sticky;
   top: 0;
   justify-content: center;
+  border: solid;
+  border-width: thin;
+  border-color: #daeeee;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
   @media (max-width: 1200px) {
     width:13%;
     padding-left:28px;
@@ -36,6 +42,7 @@ const StyledDiv = styled.div`
 
 const StyledItem = styled.div`
   width: fit-content;
+  height: 100%;
   padding-top: 10px;
   margin: 10px 40px 0 auto;
 `

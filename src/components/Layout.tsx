@@ -12,12 +12,14 @@ interface Props {
 }
 
 const StyledMain = styled.main`
+  height: 100%;
   display: flex;
 `
 
 const StyledDiv = styled.div`
   flex-direction: column;
   width: 33%;
+  height: 100%;
   margin-top: 0;
   @media (max-width: 1200px) {
     width: 55%;

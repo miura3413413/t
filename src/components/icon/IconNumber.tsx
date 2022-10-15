@@ -13,22 +13,21 @@ interface Props {
 const StyledDiv = styled.div`
   width: 100%;
   display: flex;
-
-  margin: 20px 50px 0 0;
-
+  margin-top: 5px;
+  margin-right: 3px;
 `
 
 const StyledP = styled.p`
   width: 100%;
   font-weight: lighter; 
-  margin-left: 10px;
+
 `
 
-export const IconNumber = ({Icon, number, stateFunction }: Props) => {
+export const IconNumber = ({Icon,number, stateFunction }: Props) => {
   return(
     <StyledDiv>
-        <IconButton size="large" color="info" sx={{margin: "3px"}} onClick={() => stateFunction? stateFunction() : null }>
-        <Icon sx={{color:"black"}} /> 
+      <IconButton   edge="end"  size="small" color="info"  onClick={() => stateFunction? stateFunction() : null}>
+        <Icon sx={{color:"black", fontSize:"18px", margin: "0px 15px"}} /> 
       </IconButton>
       <StyledP>{number}</StyledP>
     </StyledDiv> 
