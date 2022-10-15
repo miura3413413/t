@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-
+import TextareaAutosize from 'react-textarea-autosize';
 import PermMediaIcon from '@mui/icons-material/PermMedia';
 import PollIcon from '@mui/icons-material/Poll';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
@@ -23,21 +23,20 @@ const StyledDiv = styled.div`
 
 const StyledDivTop = styled.div`
   display: flex;
-  align-items: center;
   gap: 10px;
   height: 100%;
 `
 
-const StyledTextarea = styled.textarea`
-  width: 75%;
-  height: 50px;
-  border-width: 0 0 1px 0;
-  border-color: #daeeee;
-  outline: none;
-  padding-left: 10px;
-  font-size: 20px;
-  resize: none;
-`
+// const StyledTextarea = styled.textarea`
+//   width: 75%;
+//   height: 50px;
+//   border-width: 0 0 1px 0;
+//   border-color: #daeeee;
+//   outline: none;
+//   padding-left: 10px;
+//   font-size: 20px;
+//   resize: none;
+// `
 
 const StyledDivBottom = styled.div`
   display: flex;
@@ -90,7 +89,18 @@ export const TweetSpace: NextPage = () => {
     <StyledDiv>
       <StyledDivTop>
         <ProfileIcon />
-        <StyledTextarea  placeholder="今どうしてる？" ref={text}/>
+        <TextareaAutosize
+          style={{
+            width: "75%",
+            borderWidth: "0 0 1px 0",
+            borderColor: "#daeeee",
+            outline: "none",
+            paddingLeft: "10px",
+            fontSize: "20px",
+            resize: "none",
+          }}
+          placeholder="今どうしてる？" 
+          ref={text}/>
       </StyledDivTop>
       <StyledDivBottom>
         <IconButton size="medium" color="info">
