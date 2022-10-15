@@ -24,6 +24,9 @@ const StyledDiv = styled.div`
   @media (max-width: 1200px) {
     width: 55%;
   };
+  @media (max-width: 1000px) {
+    width: 65%;
+  };
   @media(max-width: 720px) {
     width: 85%;
   };

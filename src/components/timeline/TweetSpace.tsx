@@ -13,11 +13,10 @@ import GifBoxIcon from '@mui/icons-material/GifBox';
 import { IconButton } from "@mui/material";
 
 const StyledDiv = styled.div`
-  margin-right: 30px;
+  padding-right: 30px;
   border: solid;
   border-width: thin;
   border-color: #daeeee;
-
   border-left: none;
   border-top: none;
 `
@@ -37,6 +36,7 @@ const StyledTextarea = styled.textarea`
   outline: none;
   padding-left: 10px;
   font-size: 20px;
+  resize: none;
 `
 
 const StyledDivBottom = styled.div`
