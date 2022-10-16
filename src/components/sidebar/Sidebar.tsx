@@ -20,12 +20,7 @@ const StyledDiv = styled.div`
   position: sticky;
   top: 0;
   justify-content: center;
-  border: solid;
-  border-width: thin;
-  border-color: #daeeee;
-  border-bottom: none;
-  border-top: none;
-  border-left: none;
+  border-right: solid thin #daeeee;
   @media (max-width: 1200px) {
     width:13%;
     padding-left:28px;
@@ -56,14 +51,14 @@ export const Sidebar: NextPage = () => {
             <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
           </IconButton>
         </Link>
-        <IconText Icon={HomeIcon} text="ホーム" destination=""/>
-        <IconText Icon={SearchIcon} text="話題を検索" />
-        <IconText Icon={NotificationsNoneIcon} text="通知"  />
-        <IconText Icon={MailOutlineIcon} text="メッセージ"  />
-        <IconText Icon={BookmarkBorderIcon} text="ブックマーク"  />
-        <IconText Icon={ListAltIcon} text="リスト"  />
-        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination="Profile"/>
-        <IconText Icon={MoreHorizIcon} text="もっと見る"  />
+        <IconText Icon={HomeIcon} text="ホーム" destination="/"/>
+        <IconText Icon={SearchIcon} text="話題を検索" destination="/"/>
+        <IconText Icon={NotificationsNoneIcon} text="通知" destination="/"/>
+        <IconText Icon={MailOutlineIcon} text="メッセージ" destination="/"/>
+        <IconText Icon={BookmarkBorderIcon} text="ブックマーク" destination="/"/>
+        <IconText Icon={ListAltIcon} text="リスト" destination="/"/>
+        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination="/profile"/>
+        <IconText Icon={MoreHorizIcon} text="もっと見る"  destination=""/>
       </StyledItem>
     </StyledDiv>
   )

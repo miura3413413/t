@@ -9,11 +9,6 @@ import { TweetType } from "../../models/TweetModel";
 const StyledDiv = styled.div`
   width: 100%;
   height: 90%;
-  /* border: solid;
-  border-width: thin;
-  border-color: #daeeee;
-  border-bottom: none;
-  border-top: none; */
 
 `
 

@@ -11,7 +11,7 @@ import store from '../state/store';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
-interface MyAppProps extends AppProps {
+interface MyAppProps extends AppProps, AppProps {
   emotionCache?: EmotionCache;
 }
 
@@ -26,7 +26,7 @@ export default function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Provider store={store}>
-          <Component {...pageProps} />
+            <Component {...pageProps} />
         </Provider>
       </ThemeProvider>
     </CacheProvider>

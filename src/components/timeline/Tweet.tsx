@@ -18,11 +18,8 @@ import { IconNumber } from "../icon/IconNumber";
 const StyledDiv = styled.div`
   width: 100%;
   height: auto;
-  border: solid;
-  border-width: thin;
-  border-color: #daeeee;
-  border-left: none;
-  border-top: none;
+  border-bottom: solid thin #daeeee;
+  border-right: solid thin #daeeee;
   display: flex;
 `
 
