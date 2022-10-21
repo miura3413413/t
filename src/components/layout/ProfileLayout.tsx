@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import { Timeline } from '../timeline/Timeline'
 import Layout from './Layout'
 import Image from 'next/image'
 import styled from '@emotion/styled'
@@ -37,7 +36,7 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
     background-color: white;
     font-weight: bold;
     :hover {
-      background-color: #dedede;
+      background-color: #efefef;
     }
   `
   const StyledH2 = styled.h2`

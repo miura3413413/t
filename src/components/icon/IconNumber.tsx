@@ -26,11 +26,10 @@ const StyledP = styled.p`
 export const IconNumber = ({Icon,number, stateFunction }: Props) => {
   return(
     <StyledDiv>
-      <IconButton   edge="end"  size="small" color="info"  onClick={() => stateFunction? stateFunction() : null}>
+      <IconButton   edge="end"  size="small" color="info"  onClick={stateFunction || null}>
         <Icon sx={{color:"black", fontSize:"18px", margin: "0px 15px"}} /> 
       </IconButton>
       <StyledP>{number}</StyledP>
     </StyledDiv> 
-
   )
 }

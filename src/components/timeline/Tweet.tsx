@@ -21,6 +21,9 @@ const StyledDiv = styled.div`
   border-bottom: solid thin #daeeee;
   border-right: solid thin #daeeee;
   display: flex;
+  :hover{
+    background-color: #efefef;
+  }
 `
 
 const StyledDivRight = styled.div`
@@ -55,14 +58,20 @@ const [retweet ,setRetweet] = useState(tweet.retweet)
 const [isRetweet ,setIsRetweet] = useState(false)
 const [like ,setLike] = useState(tweet.like)
 const [isLike ,setIsLike] = useState(false)
-const clickRetweet = () => {
+const clickRetweet = (e: React.MouseEvent<HTMLInputElement>) => {
+  e.stopPropagation()
   setRetweet(isRetweet? retweet -1 : retweet +1)
   setIsRetweet(!isRetweet)
 }
 
-const clickLike = () => {
+const clickLike = (e: React.MouseEvent<HTMLInputElement>) => {
+  e.stopPropagation()
   setLike(isLike? like -1 : like +1)
   setIsLike(!isLike)
+}
+
+const routeHandler = () => {
+  router.push('/test')
 }
 
 //const clickDelete = async() => { {
@@ -74,25 +83,25 @@ const clickLike = () => {
 //   }
 //}
   return (
-  <StyledDiv>
-    <ProfileIcon />
-    <StyledDivRight>
-      <StyledDivTop >
-        <StyledSpanName>名前</StyledSpanName>
-        <StyledSpanTime>時間</StyledSpanTime>
-        <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto"}}>
-          <DeleteForeverIcon />
-        </IconButton>
-      </StyledDivTop>
-      <StyledSpanTweet>
-        {tweet.text}
-      </StyledSpanTweet>
-      <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
-        <IconNumber Icon={ChatBubbleOutlineIcon} number={tweet.reply} />
-        <IconNumber Icon={AutorenewIcon} number={retweet} stateFunction={clickRetweet}/>
-        <IconNumber Icon={FavoriteBorderIcon} number={like} stateFunction={clickLike} />
-      </div>
-    </StyledDivRight>
+    <StyledDiv onClick={routeHandler}>
+      <ProfileIcon />
+      <StyledDivRight>
+        <StyledDivTop >
+          <StyledSpanName>名前</StyledSpanName>
+          <StyledSpanTime>時間</StyledSpanTime>
+          <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto"}}>
+            <DeleteForeverIcon />
+          </IconButton>
+        </StyledDivTop>
+        <StyledSpanTweet>
+          {tweet.text}
+        </StyledSpanTweet>
+        <div style ={{display : "flex", alignItems: "center", width: "20%"}}>
+          <IconNumber Icon={ChatBubbleOutlineIcon} number={tweet.reply} />
+          <IconNumber Icon={AutorenewIcon} number={retweet} stateFunction={clickRetweet}/>
+          <IconNumber Icon={FavoriteBorderIcon} number={like} stateFunction={clickLike} />
+        </div>
+      </StyledDivRight>
     </StyledDiv>
   )
 }
