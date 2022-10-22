@@ -1,10 +1,10 @@
 import { request } from "http"
 import { NextApiRequest, NextApiResponse } from "next"
-import connectMongo from "../../../../util/connect"
+import db from "../../../../util/connect"
 import { Tweet } from "../../../models/TweetModel"
 
 export default async function adsdTweet(req: NextApiRequest, res: NextApiResponse) {
-  await connectMongo()
+  await db.connectMongo()
   if (req.method === "POST") {
     try {
       const newTweet = await new Tweet(req.body)

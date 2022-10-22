@@ -1,4 +1,4 @@
-import { Schema, model, models } from 'mongoose';
+import { Schema, model, models, Types, Date } from 'mongoose';
 
 const TweetSchema = new Schema(
   {
@@ -26,11 +26,24 @@ const TweetSchema = new Schema(
 
 export const Tweet = models.Tweet || model("Tweet", TweetSchema)
 
+// export interface TweetType {
+//   _id: Types.ObjectId
+//   text: string
+//   reply: number
+//   retweet: number
+//   like: number
+//   createdAt: Date
+//   updatedAt: Date
+//   __v: number
+// }
 export interface TweetType {
   _id: string
   text: string
   reply: number
   retweet: number
   like: number
+  createdAt: string
+  updatedAt: string
+  __v: number
 }
 //export default Tweet;

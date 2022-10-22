@@ -70,7 +70,7 @@ export const TweetSpace: NextPage = () => {
   const text = useRef<HTMLTextAreaElement>(null)
   const router = useRouter()
 
-  const doClick = async() => {
+  const addTweetHandler = async() => {
      const tweet = {
       text: text.current?.value
     }
@@ -116,7 +116,7 @@ export const TweetSpace: NextPage = () => {
           <PendingActionsIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
         </IconButton>
         <StyledDivButton>
-          <StyledButton onClick={ doClick }>ツイートする</StyledButton>
+          <StyledButton onClick={ addTweetHandler }>ツイートする</StyledButton>
         </StyledDivButton>
       </StyledDivBottom>
     </StyledDiv>

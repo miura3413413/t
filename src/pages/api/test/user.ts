@@ -1,10 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next"
+import db from "../../../../util/connect"
 import connectMongo from "../../../../util/connect"
 import User from "../../../models/UserModel"
 
 export default async function addUser(req: NextApiRequest, res: NextApiResponse) {
 
-  await connectMongo()
+  await db.connectMongo()
   if (req.method === "GET") {
     try {
       const newUser = await User.findById(res)
