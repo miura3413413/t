@@ -25,8 +25,9 @@ export default async function adsdTweet(req: NextApiRequest, res: NextApiRespons
     }
   } else if (req.method === "DELETE") {
     try {
-      await Tweet.deleteOne(req.body)
-      return res.status(200);
+      await Tweet.deleteOne({ _id: req.body._id })
+      console.log("success")
+      return res.status(200).json("success")
     } catch (error) {
       console.log(error);
       res.status(500).json({ error });

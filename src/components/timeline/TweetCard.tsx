@@ -53,7 +53,7 @@ const StyledSpanTweet = styled.span`
 `
 
 export const TweetCard : NextPage<{tweet: TweetType}> = ({tweet}) => {
-const router = useRouter()
+  const router = useRouter()
 const [retweet ,setRetweet] = useState(tweet.retweet)
 const [isRetweet ,setIsRetweet] = useState(false)
 const [like ,setLike] = useState(tweet.like)
@@ -74,14 +74,19 @@ const routeHandler = () => {
   router.push('/test')
 }
 
-//const clickDelete = async() => { {
-//   try {
-//     await axios.delete("/api/test/tweet")
-//     router.reload()
-//   } catch(err) {
-//     console.log(err)
-//   }
-//}
+const DeleteHandler = async(e: React.MouseEvent<HTMLButtonElement>) => { 
+  e.stopPropagation()
+  const tweet1 = {
+      _id: tweet._id
+  }
+  try {
+    await axios.delete("/api/test/tweet",{data: tweet1})
+    router.reload()
+  } catch(err) {
+    console.log(err)
+  }
+}
+
   return (
     <StyledDiv onClick={routeHandler}>
       <ProfileIcon />
@@ -89,7 +94,7 @@ const routeHandler = () => {
         <StyledDivTop >
           <StyledSpanName>名前</StyledSpanName>
           <StyledSpanTime>時間</StyledSpanTime>
-          <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto"}}>
+          <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto"}} onClick={DeleteHandler}>
             <DeleteForeverIcon />
           </IconButton>
         </StyledDivTop>

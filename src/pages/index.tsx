@@ -10,7 +10,6 @@ export interface Props {
 }
 
 export const Home = ({ tweets }: Props) => {
-  console.log(tweets)
   return (
     <Layout title={"ホーム"}>
       <Timeline tweets={tweets}/>

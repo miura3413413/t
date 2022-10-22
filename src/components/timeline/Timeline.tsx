@@ -14,7 +14,6 @@ const StyledDiv = styled.div`
 `
 
 export const Timeline: NextPage<Props> = ({ tweets }) => {
-  console.log(tweets[0]._id)
   // const [tweets, setTweets] = useState(tweets);
   // console.log(tweets)
   // useEffect(() => {
