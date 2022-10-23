@@ -37,6 +37,7 @@ export const Layout: NextPage<Props> = ({ title, children }) => {
     <div>
       <Head>
         <title>{title}/Twitter</title>
+
       </Head>
       <StyledMain>
         <Sidebar />

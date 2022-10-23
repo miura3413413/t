@@ -47,7 +47,6 @@ const StyledSpanTime = styled.span`
 
 const StyledSpanTweet = styled.span`
   margin-right: 20px;
-  
   overflow-wrap: break-word;
 `
 
@@ -70,7 +69,7 @@ const clickLike = (e: React.MouseEvent<HTMLInputElement>) => {
 }
 
 const routeHandler = () => {
-  router.push('/test')
+  router.push(`/${tweet._id}`)
 }
 
 const DeleteHandler = async(e: React.MouseEvent<HTMLButtonElement>) => { 
@@ -93,7 +92,7 @@ const DeleteHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
         <StyledDivTop >
           <StyledSpanName>名前</StyledSpanName>
           <StyledSpanTime>時間</StyledSpanTime>
-          <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto"}} onClick={DeleteHandler}>
+          <IconButton aria-label="delete"  sx={{margin: "auto 0px auto auto",}} onClick={DeleteHandler}>
             <DeleteForeverIcon />
           </IconButton>
         </StyledDivTop>

@@ -9,7 +9,7 @@ export interface Props {
   tweets: TweetType[]
 }
 
-export const Home = ({ tweets }: Props) => {
+export const Home: NextPage<Props> = ({ tweets }: Props) => {
   return (
     <Layout title={"ホーム"}>
       <Timeline tweets={tweets}/>

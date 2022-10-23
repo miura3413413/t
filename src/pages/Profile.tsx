@@ -9,7 +9,7 @@ export interface Props {
 }
 
 
-export const Profile = ({ tweets }: Props) => {
+export const Profile: NextPage<Props> = ({ tweets }: Props) => {
   return (
     <ProfileLayout title={"test"} >
       {tweets.map((tweet) => (
