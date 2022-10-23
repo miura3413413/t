@@ -19,7 +19,6 @@ const StyledDiv = styled.div`
   width: 100%;
   height: auto;
   border-bottom: solid thin #daeeee;
-  border-right: solid thin #daeeee;
   display: flex;
   :hover{
     background-color: #efefef;

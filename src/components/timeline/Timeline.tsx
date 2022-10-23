@@ -9,7 +9,7 @@ import { TweetType } from "../../models/TweetModel";
 import { Props } from "../../pages";
 const StyledDiv = styled.div`
   width: 100%;
-  height: 90%;
+  height: 100%;
 
 `
 

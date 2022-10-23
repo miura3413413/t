@@ -19,8 +19,9 @@ const StyledMain = styled.main`
 const StyledDiv = styled.div`
   flex-direction: column;
   width: 33%;
-  height: 100%;
+  height: auto;
   margin-top: 0;
+  border-right: solid thin #daeeee;
   @media (max-width: 1200px) {
     width: 55%;
   };
