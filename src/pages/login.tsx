@@ -1,11 +1,18 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import styled from '@emotion/styled';
+import { createPortal } from 'react-dom';
+import React, { ReactNode, useState } from 'react';
+import Modal, { LoginModal } from '../components/modal/LoginModal';
 
-interface Props {
+interface ButtonProps {
   color?: string
   bgColor?: string
   hoverBgColor: string
+}
+
+interface Props {
+  children: ReactNode;
 }
 
 const StyledDiv = styled.div`
@@ -62,7 +69,7 @@ const StyledDivButton = styled.div`
   flex-flow: column;
 `
 
-const StyledButton = styled.button<Props>`
+export const StyledButton = styled.button<ButtonProps>`
   width: 300px;
   height: 40px;
   background-color: ${({bgColor}) => (bgColor || "white")} ;
@@ -92,9 +99,9 @@ const StyledH4 = styled.h4`
 `
 
 
-const StyledDivButtomImage = styled.div`
+const StyledDivBottomImage = styled.div`
   width: 100%;
-  height: 170px;
+  height: 152px;
   position: relative;
   
   @media(min-width: 1000px) {
@@ -102,10 +109,16 @@ const StyledDivButtomImage = styled.div`
   };
 
 `
+const ModalPortal: NextPage<Props> = ({ children }: Props) => {
+  const target = document.getElementById('modal');
+  return createPortal(children, target!);
+};
 
 export const Login: NextPage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
-    <StyledDiv>
+    <StyledDiv >
+      <div id='modal'></div>
       <StyledDivLeft>
         <Image src="/lohp_1302x955.png"  layout="fill"  objectFit="cover"/>
         <StyledDivImage>
@@ -129,11 +142,17 @@ export const Login: NextPage = () => {
           <StyledP>または</StyledP>
           <StyledButton bgColor='#4aa6e7' color='white' hoverBgColor='#308ce3'>電話番号またはメールアドレスで登録</StyledButton>
           <StyledH4>アカウントをお持ちの場合</StyledH4>
-          <StyledButton color='#1a82d7' hoverBgColor='#eaf2fe'>ログイン</StyledButton>
+          <StyledButton color='#1a82d7' hoverBgColor='#eaf2fe' onClick={() => setModalOpen(true)}>ログイン</StyledButton>
+          {modalOpen && (
+            <ModalPortal>
+              <LoginModal  handleCloseClick={() => setModalOpen(false)}/>
+            </ModalPortal>
+          )}
+          
         </StyledDivMain>
-        <StyledDivButtomImage>
+        <StyledDivBottomImage>
           <Image src="/lohp_1302x955.png"  layout="fill"  objectFit="cover"/>
-        </StyledDivButtomImage>
+        </StyledDivBottomImage>
       </StyledDivRight>
     </StyledDiv>
     
