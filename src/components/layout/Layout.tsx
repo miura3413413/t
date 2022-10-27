@@ -7,7 +7,7 @@ import styled from '@emotion/styled';
 import { Topbar } from '../topbar/Topbar'
 
 interface Props {
-  title: string,
+  title: string | undefined | null,
   children: React.ReactNode
 }
 

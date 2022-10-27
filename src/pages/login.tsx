@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled';
 import { createPortal } from 'react-dom';
 import React, { ReactNode, useState } from 'react';
-import Modal, { LoginModal } from '../components/modal/LoginModal';
+import { LoginModal } from '../components/modal/LoginModal';
 
 interface ButtonProps {
   color?: string
@@ -157,6 +157,7 @@ export const Login: NextPage = () => {
     </StyledDiv>
     
   )
+
 }
 
 export default Login

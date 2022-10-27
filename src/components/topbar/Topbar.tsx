@@ -2,7 +2,7 @@ import { NextPage } from "next"
 import styled from '@emotion/styled'
 
 interface Props {
-  title: string
+  title: string | undefined | null
 }
 
 const StyledDiv = styled.div`

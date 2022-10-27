@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/css'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
 
 interface Props {
   title: string
@@ -11,8 +12,7 @@ interface Props {
 }
 
 export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
-
-
+  const { data: session } = useSession();
   const StyledDiv = styled.div`
     position: relative;
     width: 100%;
@@ -75,7 +75,7 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
   `
 
   return (
-    <Layout title={title}>
+    <Layout title={session?.user?.name}>
       <StyledDiv>
         <Image src="/inkeffectgalaxy_apple.jpg"
         layout='fill'
@@ -93,7 +93,7 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
         </StyledDivImage>
       </StyledDiv>
       <StyledSettingButton>プロフィールを設定</StyledSettingButton>
-      <StyledH2>test</StyledH2>
+      <StyledH2>{session?.user?.name}</StyledH2>
       <StyledDivH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロー中</StyledH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロワー</StyledH5>

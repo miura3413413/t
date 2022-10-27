@@ -33,4 +33,5 @@ export default async function adsdTweet(req: NextApiRequest, res: NextApiRespons
       res.status(500).json({ error });
     }
   }
+  await db.disconnectMongo()
 }

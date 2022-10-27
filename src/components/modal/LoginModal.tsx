@@ -4,12 +4,17 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { IconButton } from '@mui/material';
 import Image from 'next/image';
 import { StyledButton } from '../../pages/login';
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router';
+import { Field, Form, Formik } from "formik"
+import Router from "next/router";
+import { useState } from 'react';
 
 interface Props {
   handleCloseClick: (e: React.MouseEvent<HTMLButtonElement>)  => void;
 }
 
-const StyledDiv = styled.div`
+const StyledForm = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -58,39 +63,103 @@ const StyledInput = styled.input`
 `
 
 export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
-  return (
-    <StyledDiv>
-      <StyledDivWrapper>
-          <IconButton
-            onClick={handleCloseClick}
-            sx={{
-              position: "relative",
-              top: "-100px",
-              right: "90px"
-            }}>
-            <ClearIcon />
-          </IconButton>
-          <StyledDivImage>
-            <Image
-              src="/2021 Twitter logo - blue.png"
-              width={30} height={30}
-              objectFit="contain"
-            />
-          </StyledDivImage>
-          <StyledDivMain>
-            <h1>Twitterにログイン</h1>
-            <div style={{display: "flex", flexFlow: "column"}}>
-              <StyledButton hoverBgColor='#eef2fc'>Googleで登録</StyledButton>
-              <StyledButton hoverBgColor='#e2e2e2'>Appleのアカウントで登録</StyledButton>
-              <StyledP>または</StyledP>
-              <StyledInput placeholder='電話番号/メールアドレス/ユーザー名'/>
-              <StyledButton hoverBgColor='#2b2b2b' color='white' bgColor='black' >次へ</StyledButton>
-              <StyledButton hoverBgColor='#e2e2e2'>パスワードを忘れた場合はこちら</StyledButton>
-            </div>
-          </StyledDivMain>
 
-      </StyledDivWrapper>
-    </StyledDiv>
+  const { data: session } = useSession()
+  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const redirectToHome = () => {
+    const { pathname } = Router;
+    if (pathname === "/login") {
+      // TODO: redirect to a success register page
+      Router.push("/");
+    }
+  };
+
+  const loginUser = async () => {
+    const res: any = await signIn("credentials", {
+      redirect: false,
+      email: email,
+      password: password,
+      callbackUrl: `${window.location.origin}`,
+    });
+
+    res.error ? console.log(res.error) : redirectToHome();
+  };
+
+  const formSubmit = (actions: any) => {
+    actions.setSubmitting(false);
+    loginUser()
+  };
+
+  return (
+    <StyledForm>
+      <Formik
+      initialValues={{}} 
+      validateOnChange={false}
+      validateOnBlur={false}
+      onSubmit={(_, actions) => {
+        formSubmit(actions);
+      }}
+      >
+        <Form>
+          <StyledDivWrapper>
+            <IconButton
+              onClick={handleCloseClick}
+              sx={{
+                position: "relative",
+                top: "-100px",
+                right: "90px"
+              }}>
+              <ClearIcon />
+            </IconButton>
+            <StyledDivImage>
+              <Image
+                src="/2021 Twitter logo - blue.png"
+                width={30} height={30}
+                objectFit="contain"
+              />
+            </StyledDivImage>
+            <StyledDivMain>
+              <h1>Twitterにログイン</h1>
+              <div style={{display: "flex", flexFlow: "column"}}>
+                <StyledButton hoverBgColor='#eef2fc'>Googleで登録</StyledButton>
+                <StyledButton hoverBgColor='#e2e2e2'>Appleのアカウントで登録</StyledButton>
+                <StyledP>または</StyledP>
+                <Field name="email">
+                  {() => (
+                    <StyledInput
+                      placeholder='電話番号/メールアドレス/ユーザー名'
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)} 
+                    />
+                  )}
+                </Field>
+                <Field name="password">
+                  {() => (
+                    <StyledInput
+                      placeholder='パスワード'
+                      value={password}
+                      type="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  )}
+                </Field>
+                <StyledButton
+                  hoverBgColor='#2b2b2b'
+                  color='white'
+                  bgColor='black'
+                  type='submit'
+                >ログイン
+                </StyledButton>
+                <StyledButton hoverBgColor='#e2e2e2'>パスワードを忘れた場合はこちら</StyledButton>
+              </div>
+            </StyledDivMain>
+        </StyledDivWrapper>
+        </Form>
+      </Formik>
+    </StyledForm>
   )
 }
 
