@@ -6,7 +6,6 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { Provider } from 'react-redux';
-import store from '../state/store';
 import { SessionProvider } from 'next-auth/react';
 import { Session } from 'next-auth';
 
@@ -29,9 +28,7 @@ export default function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <SessionProvider session={session}>
-          <Provider store={store}>
               <Component {...pageProps} />
-          </Provider>
         </SessionProvider>
       </ThemeProvider>
     </CacheProvider>
