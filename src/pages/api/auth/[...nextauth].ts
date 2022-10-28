@@ -7,16 +7,16 @@ export default nextAuth({
   session: {
     strategy: "jwt",
   },
-  // callbacks: {
-  //   async jwt({ token, user }) {
-  //     if (user?._id) token._id = user._id
-  //     return token
-  //   },
-  //   async session({ session, token }) {
-  //     if (token?._id) session.user._id = token._id;
-  //     return session
-  //   },
-  // },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user?.id) token._id = user.id
+      return token
+    },
+    async session({ session, token }) {
+      session.user._id = token._id;
+      return session
+    },
+  },
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -30,6 +30,10 @@ export default nextAuth({
           label: "Password",
           type: "password",
         },
+        // _id: {
+        //   label: "Id",
+        //   type: "id",
+        // },
       },
       async authorize(credentials) {
         await db.connectMongo();

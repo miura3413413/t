@@ -73,7 +73,7 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
     const { pathname } = Router;
     if (pathname === "/login") {
       // TODO: redirect to a success register page
-      Router.push("/");
+      Router.push(`/${session?.user._id}`);
     }
   };
 
@@ -82,12 +82,12 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
       redirect: false,
       email: email,
       password: password,
-      callbackUrl: `${window.location.origin}`,
+      callbackUrl: `/${session?.user._id}`,
     });
 
     res.error ? console.log(res.error) : redirectToHome();
   };
-
+  console.log(window.location.origin)
   const formSubmit = (actions: any) => {
     actions.setSubmitting(false);
     loginUser()

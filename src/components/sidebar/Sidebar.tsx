@@ -13,6 +13,7 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { IconButton } from "@mui/material";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const StyledDiv = styled.div`
   width: 30%;
@@ -44,6 +45,7 @@ const StyledItem = styled.div`
 
 export const Sidebar: NextPage = () => {
   
+  const { data: session } = useSession()
   return (
     <StyledDiv >
       <StyledItem>
@@ -58,7 +60,7 @@ export const Sidebar: NextPage = () => {
         <IconText Icon={MailOutlineIcon} text="メッセージ" destination="/"/>
         <IconText Icon={BookmarkBorderIcon} text="ブックマーク" destination="/"/>
         <IconText Icon={ListAltIcon} text="リスト" destination="/"/>
-        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination="/id"/>
+        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination={`/${session?.user._id}`}/>
         <IconText Icon={MoreHorizIcon} text="もっと見る"  destination=""/>
       </StyledItem>
     </StyledDiv>

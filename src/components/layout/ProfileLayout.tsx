@@ -95,6 +95,7 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
       </StyledDiv>
       <StyledSettingButton>プロフィールを設定</StyledSettingButton>
       <StyledH2>{session?.user?.name}</StyledH2>
+      <h4>@{session?.user._id}</h4>
       <StyledDivH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロー中</StyledH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロワー</StyledH5>

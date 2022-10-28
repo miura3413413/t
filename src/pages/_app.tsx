@@ -8,13 +8,14 @@ import createEmotionCache from '../src/createEmotionCache';
 import { Provider } from 'react-redux';
 import store from '../state/store';
 import { SessionProvider } from 'next-auth/react';
+import { Session } from 'next-auth';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps, AppProps {
   emotionCache?: EmotionCache;
-  session: any
+  session: Session
 }
 
 export default function MyApp(props: MyAppProps) {
