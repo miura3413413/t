@@ -26,16 +26,6 @@ const TweetSchema = new Schema(
 
 export const Tweet = models.Tweet || model("Tweet", TweetSchema)
 
-// export interface TweetType {
-//   _id: Types.ObjectId
-//   text: string
-//   reply: number
-//   retweet: number
-//   like: number
-//   createdAt: Date
-//   updatedAt: Date
-//   __v: number
-// }
 export interface TweetType {
   _id: string
   text: string
@@ -46,4 +36,3 @@ export interface TweetType {
   updatedAt: string
   __v: number
 }
-//export default Tweet;
