@@ -54,12 +54,12 @@ export const Sidebar: NextPage = () => {
             <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
           </IconButton>
         </Link>
-        <IconText Icon={HomeIcon} text="ホーム" destination="/"/>
-        <IconText Icon={SearchIcon} text="話題を検索" destination="/"/>
-        <IconText Icon={NotificationsNoneIcon} text="通知" destination="/"/>
-        <IconText Icon={MailOutlineIcon} text="メッセージ" destination="/"/>
-        <IconText Icon={BookmarkBorderIcon} text="ブックマーク" destination="/"/>
-        <IconText Icon={ListAltIcon} text="リスト" destination="/"/>
+        <IconText Icon={HomeIcon} text="ホーム" destination="/home"/>
+        <IconText Icon={SearchIcon} text="話題を検索" destination="/home"/>
+        <IconText Icon={NotificationsNoneIcon} text="通知" destination="/home"/>
+        <IconText Icon={MailOutlineIcon} text="メッセージ" destination="/home"/>
+        <IconText Icon={BookmarkBorderIcon} text="ブックマーク" destination="/home"/>
+        <IconText Icon={ListAltIcon} text="リスト" destination="/home"/>
         <IconText Icon={PermIdentityIcon} text="プロフィール"  destination={`/${session?.user._id}`}/>
         <IconText Icon={MoreHorizIcon} text="もっと見る"  destination=""/>
       </StyledItem>

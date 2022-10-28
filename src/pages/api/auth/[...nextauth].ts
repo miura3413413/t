@@ -30,10 +30,10 @@ export default nextAuth({
           label: "Password",
           type: "password",
         },
-        // _id: {
-        //   label: "Id",
-        //   type: "id",
-        // },
+        _id: {
+          label: "Id",
+          type: "id",
+        },
       },
       async authorize(credentials) {
         await db.connectMongo();

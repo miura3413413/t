@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import styled from '@emotion/styled'
-import { StyledButton } from '../../pages/login';
+import { StyledButton } from '../../pages';
 
 
 interface Props {

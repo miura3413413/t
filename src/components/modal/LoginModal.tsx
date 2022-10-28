@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import ClearIcon from '@mui/icons-material/Clear';
 import { IconButton } from '@mui/material';
 import Image from 'next/image';
-import { StyledButton } from '../../pages/login';
+import { StyledButton } from '../../pages';
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
 import { Field, Form, Formik } from "formik"
@@ -71,7 +71,7 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
 
   const redirectToHome = () => {
     const { pathname } = Router;
-    if (pathname === "/login") {
+    if (pathname === "/") {
       // TODO: redirect to a success register page
       Router.push(`/${session?.user._id}`);
     }

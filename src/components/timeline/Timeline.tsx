@@ -6,7 +6,7 @@ import { dummyTweets } from "../../models/dummydata"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { TweetType } from "../../models/TweetModel";
-import { Props } from "../../pages";
+import { Props } from "../../pages/home";
 const StyledDiv = styled.div`
   width: 100%;
   height: 100%;

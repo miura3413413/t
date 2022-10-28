@@ -46,9 +46,10 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
 
   const StyledDivH5 = styled.div`
     display: flex;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 20px;
     gap: 15px;
   `
+
   const StyledH5 = styled.h5`
     color: gray;
     padding-bottom: 0;
@@ -56,6 +57,11 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
       border-bottom: solid thin;
       cursor: pointer;
     }
+  `
+    const StyledH4 = styled.h4`
+    color: gray;
+    margin: 0 0 0 20px;
+    
   `
 
   const StyledDivButoon = styled.div`
@@ -95,7 +101,7 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
       </StyledDiv>
       <StyledSettingButton>プロフィールを設定</StyledSettingButton>
       <StyledH2>{session?.user?.name}</StyledH2>
-      <h4>@{session?.user._id}</h4>
+      <StyledH4>@{session?.user._id}</StyledH4>
       <StyledDivH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロー中</StyledH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロワー</StyledH5>
