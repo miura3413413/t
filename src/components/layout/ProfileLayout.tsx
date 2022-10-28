@@ -13,6 +13,7 @@ interface Props {
 
 export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
   const { data: session } = useSession();
+  console.log(session)
   const StyledDiv = styled.div`
     position: relative;
     width: 100%;

@@ -1,33 +1,34 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { Timeline } from '../components/timeline/Timeline'
-import Layout from '../components/layout/Layout'
-import { Tweet, TweetType } from '../models/TweetModel'
-import db from '../../util/connect'
+import ProfileLayout from '../components/layout/ProfileLayout'
 import { TweetCard } from '../components/timeline/TweetCard'
+import db from '../../util/connect'
+import { Tweet, TweetType } from '../models/TweetModel'
 
 export interface Props {
-  query: {id: string},
-  tweet: TweetType
+  tweets: TweetType[]
 }
 
-export const Home: NextPage<Props> = ({ query, tweet}: Props) => {
+
+export const Profile: NextPage<Props> = ({ tweets }: Props) => {
+  
   return (
-    <Layout title={"ツイート"}>
-      <TweetCard tweet={tweet}/>
-    </Layout>
+    <ProfileLayout title={"test"} >
+      {tweets.map((tweet) => (
+        <TweetCard tweet={tweet} key={tweet._id}/>
+      ))}
+    </ProfileLayout>
   )
 }
 
-export default Home
+export default Profile
 
-export const getServerSideProps: GetServerSideProps = async ({query}) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   await db.connectMongo()
-  const tweet = await Tweet.findOne({_id: query.id})
+  const tweets = await Tweet.find()
 
   return {
     props: {
-       query,
-       tweet: JSON.parse(JSON.stringify(tweet))
+       tweets: JSON.parse(JSON.stringify(tweets))
     }
   }
 }

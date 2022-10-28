@@ -81,7 +81,7 @@ export const TweetCard : NextPage<{tweet: TweetType}> = ({tweet}) => {
   }
 
   const routeHandler = () => {
-    router.push(`/${tweet._id}`)
+    router.push(`/status/${tweet._id}`)
   }
 
 const DeleteHandler = async(e: React.MouseEvent<HTMLButtonElement>) => { 

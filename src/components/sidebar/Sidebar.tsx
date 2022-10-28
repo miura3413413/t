@@ -43,6 +43,7 @@ const StyledItem = styled.div`
 `
 
 export const Sidebar: NextPage = () => {
+  
   return (
     <StyledDiv >
       <StyledItem>
@@ -57,7 +58,7 @@ export const Sidebar: NextPage = () => {
         <IconText Icon={MailOutlineIcon} text="メッセージ" destination="/"/>
         <IconText Icon={BookmarkBorderIcon} text="ブックマーク" destination="/"/>
         <IconText Icon={ListAltIcon} text="リスト" destination="/"/>
-        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination="/profile"/>
+        <IconText Icon={PermIdentityIcon} text="プロフィール"  destination="/id"/>
         <IconText Icon={MoreHorizIcon} text="もっと見る"  destination=""/>
       </StyledItem>
     </StyledDiv>
