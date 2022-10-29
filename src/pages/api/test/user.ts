@@ -8,7 +8,7 @@ export default async function addUser(req: NextApiRequest, res: NextApiResponse)
   await db.connectMongo()
   if (req.method === "GET") {
     try {
-      const newUser = await User.findById(res)
+      const newUser = await User.findById(req.body)
       console.log(newUser)
       return res.status(200).json(newUser);
     } catch (error) {

@@ -23,7 +23,7 @@ export default Home
 export const getServerSideProps: GetServerSideProps = async ({query}) => {
   await db.connectMongo()
   const tweet = await Tweet.findOne({_id: query.id})
-
+  
   return {
     props: {
        query,
