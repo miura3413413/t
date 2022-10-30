@@ -64,6 +64,7 @@ const StyledInput = styled.input`
 
 export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
 
+  
   const { data: session } = useSession()
   const router = useRouter()
   const [email, setEmail] = useState("");

@@ -1,32 +1,37 @@
-import type { GetServerSideProps, NextPage } from 'next'
+import type { NextPage } from 'next'
 import { Timeline } from '../components/timeline/Timeline'
 import Layout from '../components/layout/Layout'
-import connectMongo from '../../util/connect'
+
 import { Tweet, TweetType } from '../models/TweetModel'
-import db from '../../util/connect'
+import { usePost } from './[id]'
+
 
 export interface Props {
   tweets: TweetType[]
 }
 
-export const Home: NextPage<Props> = ({ tweets }: Props) => {
-  return (
-    <Layout title={"ホーム"}>
-      <Timeline tweets={tweets}/>
+
+
+
+  export const Home: NextPage<Props> = () => {
+  const { data, isLoading } = usePost();
+  console.log(data)
+  if(data) {
+    return (
+      <Layout title={"ホーム"}>
+      <Timeline tweets={data.tweet}/>
     </Layout>
+    )
+  }
+  return (
+    
+    // <Layout title={"ホーム"}>
+    //   <Timeline tweets={data.tweet}/>
+    // </Layout>
+    <div>not found</div>
   )
 }
 
 export default Home
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  await db.connectMongo()
-  const tweets = await Tweet.find()
-
-  return {
-    props: {
-       tweets: JSON.parse(JSON.stringify(tweets))
-    }
-  }
-}
 

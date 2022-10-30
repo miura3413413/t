@@ -24,3 +24,13 @@ const UserSchema = new Schema(
 const User = models.User || model("User", UserSchema)
 
 export default User;
+
+export interface UserType {
+  _id: string
+  name: string
+  password: string
+  email: number
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
