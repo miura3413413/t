@@ -11,77 +11,77 @@ interface Props {
   user: UserType | undefined
   children: React.ReactNode
 }
+const StyledDiv = styled.div`
+position: relative;
+width: 100%;
+height: 200px;
 
+`
+
+const StyledDivImage = styled.div`
+position: absolute;
+top: 150px;
+left: 10px;
+border: 5px solid white;
+border-radius: 50%;
+`
+const StyledSettingButton = styled.button`
+float: right;
+margin: 10px;
+border-radius: 20px;
+height: 35px;
+width: 160px;
+border: 1px solid silver;
+background-color: white;
+font-weight: bold;
+:hover {
+  background-color: #efefef;
+}
+`
+const StyledH2 = styled.h2`
+margin: 90px 0 0 20px;
+`
+
+const StyledDivH5 = styled.div`
+display: flex;
+margin: 0 0 0 20px;
+gap: 15px;
+`
+
+const StyledH5 = styled.h5`
+color: gray;
+padding-bottom: 0;
+:hover {
+  border-bottom: solid thin;
+  cursor: pointer;
+}
+`
+const StyledH4 = styled.h4`
+color: gray;
+margin: 0 0 0 20px;
+
+`
+
+const StyledDivButoon = styled.div`
+display: flex;
+`
+
+const StyledButton = styled.button`
+width: 100%;
+height: 50px;
+white-space: nowrap;
+border: none;
+background-color: white;
+transition: 0.3s;
+border-bottom: solid thin #daeeee;
+:hover{
+  background-color: #e2e2e2;
+}
+`
 export const ProfileLayout: NextPage<Props> = ({ title ,user, children }) => {
 
 
-  const StyledDiv = styled.div`
-    position: relative;
-    width: 100%;
-    height: 200px;
 
-  `
-
-  const StyledDivImage = styled.div`
-    position: absolute;
-    top: 150px;
-    left: 10px;
-    border: 5px solid white;
-    border-radius: 50%;
-  `
-  const StyledSettingButton = styled.button`
-    float: right;
-    margin: 10px;
-    border-radius: 20px;
-    height: 35px;
-    width: 160px;
-    border: 1px solid silver;
-    background-color: white;
-    font-weight: bold;
-    :hover {
-      background-color: #efefef;
-    }
-  `
-  const StyledH2 = styled.h2`
-    margin: 90px 0 0 20px;
-  `
-
-  const StyledDivH5 = styled.div`
-    display: flex;
-    margin: 0 0 0 20px;
-    gap: 15px;
-  `
-
-  const StyledH5 = styled.h5`
-    color: gray;
-    padding-bottom: 0;
-    :hover {
-      border-bottom: solid thin;
-      cursor: pointer;
-    }
-  `
-    const StyledH4 = styled.h4`
-    color: gray;
-    margin: 0 0 0 20px;
-    
-  `
-
-  const StyledDivButoon = styled.div`
-    display: flex;
-  `
-
-  const StyledButton = styled.button`
-    width: 100%;
-    height: 50px;
-    white-space: nowrap;
-    border: none;
-    background-color: white;
-    transition: 0.3s;
-    border-bottom: solid thin #daeeee;
-    :hover{
-      background-color: #e2e2e2;
-    }
-  `
   console.log(user)
   return (
     <Layout title={user?.name}>
