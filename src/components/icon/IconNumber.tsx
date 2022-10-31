@@ -15,6 +15,7 @@ const StyledDiv = styled.div`
   display: flex;
   margin-top: 5px;
   margin-right: 3px;
+
 `
 
 const StyledP = styled.p`

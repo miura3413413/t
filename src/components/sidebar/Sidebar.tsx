@@ -14,6 +14,10 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { IconButton } from "@mui/material";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { ProfileIcon } from "../icon/ProfileIcon";
+import ProfileMenu from "../menu/ProfileMenu";
+import { useState } from "react";
 
 const StyledDiv = styled.div`
   width: 30%;
@@ -22,6 +26,7 @@ const StyledDiv = styled.div`
   top: 0;
   justify-content: center;
   border-right: solid thin #daeeee;
+  z-index: 100;
   @media (max-width: 1200px) {
     width:13%;
     padding-left:28px;
@@ -35,19 +40,19 @@ const StyledDiv = styled.div`
     padding: 0;
   }
 `
-
 const StyledItem = styled.div`
   width: fit-content;
-  height: 100%;
   padding-top: 10px;
   margin: 10px 40px 0 auto;
 `
 
+
+
 export const Sidebar: NextPage = () => {
-  
+  const [show, setShow] = useState(false);
   const { data: session } = useSession()
   return (
-    <StyledDiv >
+    <StyledDiv>
       <StyledItem>
         <Link href={"/home"}>
           <IconButton size="large" color="info" sx={{margin:"4px"}}>
@@ -61,8 +66,19 @@ export const Sidebar: NextPage = () => {
         <IconText Icon={BookmarkBorderIcon} text="ブックマーク" destination="/home"/>
         <IconText Icon={ListAltIcon} text="リスト" destination="/home"/>
         <IconText Icon={PermIdentityIcon} text="プロフィール"  destination={`/${session?.user._id}`}/>
-        <IconText Icon={MoreHorizIcon} text="もっと見る"  destination=""/>
+        <IconText Icon={MoreHorizIcon} text="もっと見る" />
+        <IconButton
+          size="small"
+          color="inherit"
+          sx={{top: "250px"}}
+          onClick={ () => setShow(!show)}
+          >
+          <div style={{ borderRadius: '50%', overflow: 'hidden', width: '50px', height: '50px',  margin: " 3px " }}>
+            <Image  src="/default_profile_400x400_l.webp" width="50" height="50" objectFit="cover" />
+          </div>
+        </IconButton>
       </StyledItem>
+      {show && <ProfileMenu />}
     </StyledDiv>
   )
 

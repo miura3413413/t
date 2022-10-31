@@ -1,59 +1,43 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import ProfileLayout from '../components/layout/ProfileLayout'
 import { TweetCard } from '../components/timeline/TweetCard'
-import db from '../../util/connect'
-import { Tweet, TweetType } from '../models/TweetModel'
-import axios from 'axios'
-import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query'
-import { UserType } from '../models/UserModel'
+import { dehydrate, QueryClient } from '@tanstack/react-query'
+import { getPost, usePost } from '../../util/fetchFunction'
+import { Sidebar } from '../components/sidebar/Sidebar'
 
+export const Profile: NextPage<any>= ({dehydratedState, id}): any => {
 
-
-export const getPost = async ()  => {
-  const resTweet = await axios.get("http://localhost:3000/api/test/tweet");
-  const resUser = await axios.get("http://localhost:3000/api/test/user");
-  const data:{tweet: TweetType[], user: UserType[]} = {
-    tweet: resTweet.data,
-    user: resUser.data,
-  }
-  
-  return data
-}
-
-export const usePost = () => {
-  return useQuery(['post'], () => getPost());
-}
-
-export const Profile: NextPage= () => {
-  const { data, isLoading } = usePost();
-
-  if(data) {
+  const { data, isLoading } = usePost(id);
+  console.log(data)
+  if(data?.user) {
     return (
-      <ProfileLayout title={"test"} >
-      {data.tweet.map((tweet) => (
+      <ProfileLayout title={"test"} user={data.user}>
+      {data.tweets.map((tweet) => (
         <TweetCard tweet={tweet} key={tweet._id}/>
       ))}
     </ProfileLayout>
     )
   }
   return (
-    // <ProfileLayout title={"test"} >
-    //   {tweets.map((tweet) => (
-    //     <TweetCard tweet={tweet} key={tweet._id}/>
-    //   ))}
-    // </ProfileLayout>
-    <div>not found</div>
+    <div style={{display: "flex"}}>
+      <Sidebar />
+      <h4 style={{textAlign: "center", margin: "100px auto"}}>このページは存在しません。他のページを検索してみましょう。</h4>
+    </div>
+
+
   )
 }
 
 export default Profile
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const  id  = context.query.id    
   const queryClient = new QueryClient()
-  await queryClient.fetchQuery(['post'], () => getPost())
+  await queryClient.fetchQuery(['post',id], () => getPost(id))
   return {
     props: {
         dehydratedState: dehydrate(queryClient),
+        id: id,
     },
-}
+  }
 }

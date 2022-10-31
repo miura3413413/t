@@ -14,6 +14,7 @@ interface Props {
 const StyledMain = styled.main`
   height: 100%;
   display: flex;
+
 `
 
 const StyledDiv = styled.div`

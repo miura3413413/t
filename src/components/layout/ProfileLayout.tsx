@@ -4,20 +4,22 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 import { css } from '@emotion/css'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
+import { UserType } from '../../models/UserModel'
 
 interface Props {
-  title: string
+  title?: string
+  user: UserType | undefined
   children: React.ReactNode
 }
 
-export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
-  const { data: session } = useSession();
-  console.log(session)
+export const ProfileLayout: NextPage<Props> = ({ title ,user, children }) => {
+
+
   const StyledDiv = styled.div`
     position: relative;
     width: 100%;
     height: 200px;
+
   `
 
   const StyledDivImage = styled.div`
@@ -80,13 +82,14 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
       background-color: #e2e2e2;
     }
   `
-
+  console.log(user)
   return (
-    <Layout title={session?.user?.name}>
+    <Layout title={user?.name}>
       <StyledDiv>
         <Image src="/inkeffectgalaxy_apple.jpg"
         layout='fill'
         objectFit="cover"
+        
         />
         <StyledDivImage>
           <Image 
@@ -100,8 +103,8 @@ export const ProfileLayout: NextPage<Props> = ({ title ,children }) => {
         </StyledDivImage>
       </StyledDiv>
       <StyledSettingButton>プロフィールを設定</StyledSettingButton>
-      <StyledH2>{session?.user?.name}</StyledH2>
-      <StyledH4>@{session?.user._id}</StyledH4>
+      <StyledH2>{user?.name}</StyledH2>
+      <StyledH4>@{user?._id}</StyledH4>
       <StyledDivH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロー中</StyledH5>
         <StyledH5><span style={{color: "black"}}>1</span> フォロワー</StyledH5>

@@ -6,34 +6,23 @@ import { dummyTweets } from "../../models/dummydata"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { TweetType } from "../../models/TweetModel";
-import { Props } from "../../pages/home";
+import { usePost } from "../../../util/fetchFunction";
+
 const StyledDiv = styled.div`
   width: 100%;
   height: 100%;
 
+
 `
 
-export const Timeline: NextPage<Props> = ({ tweets }) => {
-  // const [tweets, setTweets] = useState(tweets);
-  // console.log(tweets)
-  // useEffect(() => {
-  //   const fetchTweet = async() => {
-  //     const res = await axios.get("/api/test/tweet")
-  //     setTweets(res.data)
-  //     return tweets
-  //   }
-  //   fetchTweet()
-  // }, []);
+export const Timeline: NextPage = () => {
+  const { data, isLoading } = usePost();
   return (
     <StyledDiv>
       <TweetSpace />
-      {tweets.map((tweet) => (
-        
+      {data?.tweets.map((tweet) => (
         <TweetCard tweet={tweet} key={tweet._id}/>
       ))}
-      {/* {tweets.map((tweet) => (
-        <Tweet tweet={tweet} key={tweet._id}/>
-      ))} */}
     </StyledDiv>
   )
 

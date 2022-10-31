@@ -8,7 +8,7 @@ import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
 import { Field, Form, Formik } from "formik"
 import Router from "next/router";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   handleCloseClick: (e: React.MouseEvent<HTMLButtonElement>)  => void;
@@ -70,13 +70,19 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const redirectToHome = () => {
-    const { pathname } = Router;
-    if (pathname === "/") {
-      // TODO: redirect to a success register page
-      Router.push(`/${session?.user._id}`);
+  useEffect(() => {
+    if(session?.user) {
+      router.push(`/${session?.user._id}`)
     }
-  };
+  }, [router,session])
+
+  // const redirectToHome = () => {
+  //   const { pathname } = Router;
+  //   if (pathname === "/") {
+  //     // TODO: redirect to a success register page
+  //     Router.push(`/${session?.user._id}`);
+  //   }
+  // };
 
   const loginUser = async () => {
     const res: any = await signIn("credentials", {
@@ -86,9 +92,9 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
       callbackUrl: `/${session?.user._id}`,
     });
 
-    res.error ? console.log(res.error) : redirectToHome();
+    // res.error ? console.log(res.error) : redirectToHome();
   };
-  console.log(window.location.origin)
+
   const formSubmit = (actions: any) => {
     actions.setSubmitting(false);
     loginUser()
