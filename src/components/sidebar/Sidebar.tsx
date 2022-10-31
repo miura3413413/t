@@ -50,7 +50,9 @@ const StyledItem = styled.div`
 
 export const Sidebar: NextPage = () => {
   const [show, setShow] = useState(false);
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
+  console.log(status)
+  if(status === "authenticated") {
   return (
     <StyledDiv>
       <StyledItem>
@@ -81,7 +83,19 @@ export const Sidebar: NextPage = () => {
       {show && <ProfileMenu />}
     </StyledDiv>
   )
-
+  }
+  return (
+    <StyledDiv>
+      <StyledItem>
+        <Link href={"/home"}>
+          <IconButton size="large" color="info" sx={{margin:"4px"}}>
+            <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
+          </IconButton>
+        </Link>
+        <IconText Icon={SearchIcon} text="話題を検索" destination="/home"/>
+      </StyledItem>
+    </StyledDiv>
+  )
 }
 
 

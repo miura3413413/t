@@ -5,6 +5,8 @@ import { Sidebar }from '../sidebar/Sidebar'
 
 import styled from '@emotion/styled';
 import { Topbar } from '../topbar/Topbar'
+import Bottombar from '../bottombar/Bottombar';
+import { useSession } from 'next-auth/react';
 
 interface Props {
   title: string | undefined | null,
@@ -33,12 +35,14 @@ const StyledDiv = styled.div`
     width: 85%;
   };
 `
+
+
 export const Layout: NextPage<Props> = ({ title, children }) => {
+  const { status } = useSession()
   return (
     <div>
       <Head>
         <title>{title}/Twitter</title>
-
       </Head>
       <StyledMain>
         <Sidebar />
@@ -48,6 +52,8 @@ export const Layout: NextPage<Props> = ({ title, children }) => {
         </StyledDiv>
         <Rightbar />
       </StyledMain>
+      {status==="authenticated" || <Bottombar />}
+
     </div>
   )
 }
