@@ -4,15 +4,24 @@ import { TweetCard } from '../components/timeline/TweetCard'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { getPost, usePost } from '../../util/fetchFunction'
 import { Sidebar } from '../components/sidebar/Sidebar'
+import { useEffect, useState } from 'react'
+import { TweetType } from '../models/TweetModel'
 
 export const Profile: NextPage<any>= ({dehydratedState, id}): any => {
 
-  const { data, isLoading } = usePost(id);
-  console.log(data)
+  const { data} = usePost(id);
+  const [posts, setPosts] = useState<TweetType[]| undefined>([])
+
+  useEffect(()=>{
+    setPosts(data?.tweets?.reverse())
+  },[posts])
+  
   if(data?.user) {
     return (
       <ProfileLayout title={"test"} user={data.user}>
-      {data.tweets.map((tweet) => (
+      {posts?.filter((tweet) => {
+        return tweet.userId === id
+      }).map((tweet) => (
         <TweetCard tweet={tweet} key={tweet._id}/>
       ))}
     </ProfileLayout>

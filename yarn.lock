@@ -590,6 +590,11 @@
     "@tanstack/query-core" "4.13.4"
     "use-sync-external-store" "^1.2.0"
 
+"@types/js-cookie@^3.0.2":
+  "integrity" "sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA=="
+  "resolved" "https://registry.npmjs.org/@types/js-cookie/-/js-cookie-3.0.2.tgz"
+  "version" "3.0.2"
+
 "@types/json5@^0.0.29":
   "integrity" "sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ=="
   "resolved" "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
@@ -1827,6 +1832,11 @@
   "resolved" "https://registry.npmjs.org/jose/-/jose-4.10.3.tgz"
   "version" "4.10.3"
 
+"js-cookie@^3.0.1":
+  "integrity" "sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw=="
+  "resolved" "https://registry.npmjs.org/js-cookie/-/js-cookie-3.0.1.tgz"
+  "version" "3.0.1"
+
 "js-sdsl@^4.1.4":
   "integrity" "sha512-Y2/yD55y5jteOAmY50JbUZYwk3CP3wnLPEZnlR1w9oKhITrBEtAxwuWKebFf8hMrPMgbYwFoWK/lH2sBkErELw=="
   "resolved" "https://registry.npmjs.org/js-sdsl/-/js-sdsl-4.1.4.tgz"
@@ -1991,6 +2001,11 @@
   "integrity" "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   "version" "1.2.6"
+
+"moment@^2.29.4":
+  "integrity" "sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w=="
+  "resolved" "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  "version" "2.29.4"
 
 "mongodb-connection-string-url@^2.5.3":
   "integrity" "sha512-SeAxuWs0ez3iI3vvmLk/j2y+zHwigTDKQhtdxTgt5ZCOQQS5+HW4g45/Xw5vzzbn7oQXCNQ24Z40AkJsizEy7w=="

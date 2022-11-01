@@ -5,7 +5,6 @@ import User from "../../../models/UserModel"
 export default async function addUser(req: NextApiRequest, res: NextApiResponse) {
 
   await db.connectMongo()
-  console.log(req)
   if (req.method === "GET") {
     try {
 

@@ -82,7 +82,7 @@ export const ProfileLayout: NextPage<Props> = ({ title ,user, children }) => {
 
 
 
-  console.log(user)
+
   return (
     <Layout title={user?.name}>
       <StyledDiv>

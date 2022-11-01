@@ -6,6 +6,10 @@ const TweetSchema = new Schema(
       type: String,
       required: true,
     },
+    userId: {
+      type: String,
+      required: true,
+    },
     reply: {
       type: Number,
       default: 0
@@ -29,6 +33,7 @@ export const Tweet = models.Tweet || model("Tweet", TweetSchema)
 export interface TweetType {
   _id: string
   text: string
+  userId: string
   reply: number
   retweet: number
   like: number

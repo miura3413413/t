@@ -57,7 +57,7 @@ export const Sidebar: NextPage = () => {
     <StyledDiv>
       <StyledItem>
         <Link href={"/home"}>
-          <IconButton size="large" color="info" sx={{margin:"4px"}}>
+          <IconButton size="large" color="info" style={{margin:"4px"}}>
             <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
           </IconButton>
         </Link>
@@ -72,7 +72,7 @@ export const Sidebar: NextPage = () => {
         <IconButton
           size="small"
           color="inherit"
-          sx={{top: "250px"}}
+          style={{top: "250px"}}
           onClick={ () => setShow(!show)}
           >
           <div style={{ borderRadius: '50%', overflow: 'hidden', width: '50px', height: '50px',  margin: " 3px " }}>
@@ -88,7 +88,7 @@ export const Sidebar: NextPage = () => {
     <StyledDiv>
       <StyledItem>
         <Link href={"/home"}>
-          <IconButton size="large" color="info" sx={{margin:"4px"}}>
+          <IconButton size="large" color="info" style={{margin:"4px"}}>
             <Image src="/2021 Twitter logo - blue.png" width="25" height="25" objectFit="cover" />
           </IconButton>
         </Link>

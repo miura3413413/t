@@ -7,8 +7,8 @@ import { StyledButton } from '../../pages';
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
 import { Field, Form, Formik } from "formik"
-import Router from "next/router";
 import { useEffect, useState } from 'react';
+import Cookies from "js-cookie";
 
 interface Props {
   handleCloseClick: (e: React.MouseEvent<HTMLButtonElement>)  => void;
@@ -76,7 +76,7 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
     }
   }, [router,session])
 
-  // const redirectToHome = () => {
+  // const redirectToHome = () => { 
   //   const { pathname } = Router;
   //   if (pathname === "/") {
   //     // TODO: redirect to a success register page
@@ -91,7 +91,7 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
       password: password,
       callbackUrl: `/${session?.user._id}`,
     });
-
+    Cookies.set("signedIn", "true");
     // res.error ? console.log(res.error) : redirectToHome();
   };
 
@@ -114,7 +114,7 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
           <StyledDivWrapper>
             <IconButton
               onClick={handleCloseClick}
-              sx={{
+              style={{
                 position: "relative",
                 top: "-100px",
                 right: "90px"

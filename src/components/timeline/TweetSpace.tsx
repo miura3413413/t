@@ -11,6 +11,7 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import GifBoxIcon from '@mui/icons-material/GifBox';
 import { IconButton } from "@mui/material";
+import { useSession } from "next-auth/react";
 
 const StyledDiv = styled.div`
   padding-right: 30px;
@@ -69,10 +70,11 @@ const StyledDivButton = styled.div`
 export const TweetSpace: NextPage = () => {
   const text = useRef<HTMLTextAreaElement>(null)
   const router = useRouter()
-
+  const { data: session } = useSession()
   const addTweetHandler = async() => {
      const tweet = {
-      text: text.current?.value
+      text: text.current?.value,
+      userId: session?.user._id
     }
     try {
       await axios.post("/api/test/tweet", tweet)
@@ -101,19 +103,19 @@ export const TweetSpace: NextPage = () => {
       </StyledDivTop>
       <StyledDivBottom>
         <IconButton size="medium" color="info">
-          <PermMediaIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+          <PermMediaIcon style={{fontSize: "20px", color: "#93d5ff"}}/>
         </IconButton>
         <IconButton size="medium" color="info">
-          <GifBoxIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+          <GifBoxIcon style={{fontSize: "20px", color: "#93d5ff"}}/>
         </IconButton>
         <IconButton size="medium" color="info">
-          <PollIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+          <PollIcon style={{fontSize: "20px", color: "#93d5ff"}}/>
         </IconButton>
         <IconButton size="medium" color="info">
-          <SentimentSatisfiedAltIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+          <SentimentSatisfiedAltIcon style={{fontSize: "20px", color: "#93d5ff"}}/>
         </IconButton>
         <IconButton size="medium" color="info">
-          <PendingActionsIcon sx={{fontSize: "20px", color: "#93d5ff"}}/>
+          <PendingActionsIcon style={{fontSize: "20px", color: "#93d5ff"}}/>
         </IconButton>
         <StyledDivButton>
           <StyledButton onClick={ addTweetHandler }>ツイートする</StyledButton>

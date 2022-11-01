@@ -15,6 +15,11 @@ import { useRouter } from "next/router";
 import { IconNumber } from "../icon/IconNumber";
 import { createPortal } from "react-dom";
 import CheckModal from "../modal/CheckModal";
+import { useSession } from "next-auth/react";
+import { usePost } from "../../../util/fetchFunction";
+// import { format } from 'timeago.js';
+import moment from 'moment'
+import 'moment/locale/ja' 
 
 interface Props {
   children: ReactNode;
@@ -67,7 +72,8 @@ export const TweetCard : NextPage<{tweet: TweetType}> = ({tweet}) => {
   const [like ,setLike] = useState(tweet.like)
   const [isLike ,setIsLike] = useState(false)
   const [modalOpen, setModalOpen] = useState(false);
-  
+  const { data } = usePost(tweet.userId);
+
   const clickRetweet = (e: React.MouseEvent<HTMLInputElement>) => {
     e.stopPropagation()
     setRetweet(isRetweet? retweet -1 : retweet +1)
@@ -104,11 +110,11 @@ const DeleteHandler = async(e: React.MouseEvent<HTMLButtonElement>) => {
       <ProfileIcon />
       <StyledDivRight>
         <StyledDivTop >
-          <StyledSpanName>名前</StyledSpanName>
-          <StyledSpanTime>時間</StyledSpanTime>
+          <StyledSpanName>{data?.user?.name}</StyledSpanName>
+          <StyledSpanTime>{moment(tweet.createdAt).fromNow()}</StyledSpanTime>
           <IconButton
             aria-label="delete"
-            sx={{margin: "auto 0px auto auto",}}
+            style={{margin: "auto 0px auto auto",}}
             onClick={(e) => {
               e.stopPropagation()
               setModalOpen(true)

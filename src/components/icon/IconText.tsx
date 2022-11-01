@@ -29,19 +29,14 @@ export const IconText = ({Icon, text, destination}: Props) => {
     <StyledDiv>
       {destination?
         <Link href={`${destination}`}>
-        <IconButton size="large" color="inherit" sx={{margin: "4px"}}>
-          <Icon sx={{color:"black", fontSize:"30px"}} /> 
+        <IconButton size="large" color="inherit" style={{margin: "4px"}}>
+          <Icon style={{color:"black", fontSize:"30px"}} /> 
         </IconButton>
       </Link> :
-      <IconButton size="large" color="inherit" sx={{margin: "4px"}}>
-        <Icon sx={{color:"black", fontSize:"30px"}} /> 
+      <IconButton size="large" color="inherit" style={{margin: "4px"}}>
+        <Icon style={{color:"black", fontSize:"30px"}} /> 
       </IconButton>
       }
-      {/* <Link href={`${destination}`}>
-        <IconButton size="large" color="inherit" sx={{margin: "4px"}}>
-          <Icon sx={{color:"black", fontSize:"30px"}} /> 
-        </IconButton>
-      </Link> */}
       <StyledP >{text}</StyledP>
     </StyledDiv> 
 
