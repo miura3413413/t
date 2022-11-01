@@ -8,7 +8,6 @@ import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router';
 import { Field, Form, Formik } from "formik"
 import { useEffect, useState } from 'react';
-import Cookies from "js-cookie";
 
 interface Props {
   handleCloseClick: (e: React.MouseEvent<HTMLButtonElement>)  => void;
@@ -91,7 +90,6 @@ export const LoginModal: NextPage<Props> = ({ handleCloseClick }: Props) => {
       password: password,
       callbackUrl: `/${session?.user._id}`,
     });
-    Cookies.set("signedIn", "true");
     // res.error ? console.log(res.error) : redirectToHome();
   };
 
